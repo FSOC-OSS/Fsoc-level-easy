@@ -81,7 +81,7 @@ jobs:
         echo "$payload"
         
         response=$(curl --fail --show-error --silent \
-          -X POST "$BACKEND_URL/api/comment/XpAddition" \
+          -X POST "$BACKEND_URL/api/hactoberfest/ContributorXp" \
           -H "Content-Type: application/json" \
           --data-raw "$payload" \
           -w '\nHTTP %{http_code}\n' )
