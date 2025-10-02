@@ -1,86 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacktoberfest CSS Playground</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="Updated CSS style.css">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="mysite">APS_X</div>
-    <input type="checkbox" id="nav_toggle" class="nav_toggle">
-    <label for="nav_toggle" class="nav_icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <ul class="nav_links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <header>
-    <h1>🎉 Hacktoberfest CSS Playground 🎉</h1>
-    <p class="typewriter-text">Explore awesome components built with HTML & CSS!</p>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hacktoberfest CSS Playground</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="Updated CSS style.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="mysite">APS_X</div>
+            <input type="checkbox" id="nav_toggle" class="nav_toggle" />
+            <label for="nav_toggle" class="nav_icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav_links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="components/card.html">Cards</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>🎉 Hacktoberfest CSS Playground 🎉</h1>
+            <p class="typewriter-text">
+                Explore awesome components built with HTML & CSS!
+            </p>
+        </header>
 
-  <main>
-    <section>
-      <h2>Sample Component</h2>
-      <iframe src="components/sample-card.html" frameborder="0"></iframe>
-      </section>
-    <section class="price-table">
-      <iframe src="components/pricing.html" frameborder="0"></iframe>
-    </section>
-      <div class="btn_container">
-    <a href="#modal"><button class="btn"   >APS_X</button></a>
-  </div>
-  <div class="modalBox" id="modal">
-    <p class="modalTitle">Sample Modal Popup
-    </p>
-    <p class="modalContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nostrum quo cum?</p>
-    <hr>
-    <p class="modalClose"><a href="#">Close</a></p>
-  </div>
-  <section>
-    <h2>Sample Component</h2>
-    <iframe src="components/sample-card.html" frameborder="0"></iframe>
-  </section>
+        <main>
+            <section>
+                <h2>Sample Component</h2>
+                <iframe
+                    src="components/sample-card.html"
+                    frameborder="0"
+                ></iframe>
+            </section>
+            <section class="price-table">
+                <iframe src="components/pricing.html" frameborder="0"></iframe>
+            </section>
 
-  <!-- Typewriter effect for paragraph -->
-  <section class="card typewriter-card">
-    <p class="typewriter-text">Welcome to FSoC! This was the issue assigned to me, thank you!.</p>
-  </section>
+            <section>
+                <h2>Card Component</h2>
+                <iframe
+                    src="components/card.html"
+                    frameborder="0"
+                    style="width: 100%; height: 600px"
+                ></iframe>
+            </section>
+            <div class="btn_container">
+                <a href="#modal"><button class="btn">APS_X</button></a>
+            </div>
+            <div class="modalBox" id="modal">
+                <p class="modalTitle">Sample Modal Popup</p>
+                <p class="modalContent">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
+                    nostrum quo cum?
+                </p>
+                <hr />
+                <p class="modalClose"><a href="#">Close</a></p>
+            </div>
+            <section>
+                <h2>Sample Component</h2>
+                <iframe
+                    src="components/sample-card.html"
+                    frameborder="0"
+                ></iframe>
+            </section>
 
-  <div class="btn_container">
-    <button class="btn">APS_X</button>
-  </div>
-</main>
+            <!-- Typewriter effect for paragraph -->
+            <section class="card typewriter-card">
+                <p class="typewriter-text">
+                    Welcome to FSoC! This was the issue assigned to me, thank
+                    you!.
+                </p>
+            </section>
 
-  <footer>
-    <p class="linkToFest">Register at <span class="mainLink"><a href="https://hacktoberfest.com/">Hactoberfest</a></span> Now!</p>
-    <div class="footerMiddle">
-    
-    <div class="linkToSocials">
-      <p>Link to Socials</p>
-      <ul>
-        <li><img src="" alt=""><a target="_blank" href="https://github.com/">Github</a></li>
-        <li><img src="" alt=""><a target="_blank" href="https://instagram.com/">Instagram</a></li>
-        <li><img src="" alt=""><a target="_blank" href="https://linkedin.com/">Linked In</a></li>
-      </ul> 
-    </div>  
-    <div class="contactUs">
-      <p>Contact Us</p>
-      <ul>
-        <li>PhoneNo: 1212344556</li>
-        <li><img src="" alt=""><span>Email: </span><a  href="gmail.com">Sample@example.com</a></li>      </ul>
-    </div>
-    </div>
-    <p>Made with ❤️ for Hacktoberfest</p>
-  </footer>
-</body>
+            <div class="btn_container">
+                <button class="btn">APS_X</button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="linkToFest">
+                Register at
+                <span class="mainLink"
+                    ><a href="https://hacktoberfest.com/">Hactoberfest</a></span
+                >
+                Now!
+            </p>
+            <div class="footerMiddle">
+                <div class="linkToSocials">
+                    <p>Link to Socials</p>
+                    <ul>
+                        <li>
+                            <img src="" alt="" /><a
+                                target="_blank"
+                                href="https://github.com/"
+                                >Github</a
+                            >
+                        </li>
+                        <li>
+                            <img src="" alt="" /><a
+                                target="_blank"
+                                href="https://instagram.com/"
+                                >Instagram</a
+                            >
+                        </li>
+                        <li>
+                            <img src="" alt="" /><a
+                                target="_blank"
+                                href="https://linkedin.com/"
+                                >Linked In</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="contactUs">
+                    <p>Contact Us</p>
+                    <ul>
+                        <li>PhoneNo: 1212344556</li>
+                        <li>
+                            <img src="" alt="" /><span>Email: </span
+                            ><a href="gmail.com">Sample@example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>Made with ❤️ for Hacktoberfest</p>
+        </footer>
+    </body>
 </html>
