@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <title>Responsive Image Gallery</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/dark-theme.css">
 </head>
 <body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="toggle-icon">🌙</span>
+    <span class="toggle-text">Dark Mode</span>
+  </button>
+
   <section class="image-gallery">
     <div class="gallery-item">
       <img src="p1.png" alt="P_1">
@@ -26,5 +33,43 @@
       <img src="p6.jpg" alt="P_6">
     </div>
   </section>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update toggle button
+      const toggleIcon = document.querySelector('.toggle-icon');
+      const toggleText = document.querySelector('.toggle-text');
+      
+      if (newTheme === 'dark') {
+        toggleIcon.textContent = '☀️';
+        toggleText.textContent = 'Light Mode';
+      } else {
+        toggleIcon.textContent = '🌙';
+        toggleText.textContent = 'Dark Mode';
+      }
+    }
+
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Update toggle button state
+      const toggleIcon = document.querySelector('.toggle-icon');
+      const toggleText = document.querySelector('.toggle-text');
+      
+      if (savedTheme === 'dark') {
+        toggleIcon.textContent = '☀️';
+        toggleText.textContent = 'Light Mode';
+      }
+    });
+  </script>
 </body>
 </html>

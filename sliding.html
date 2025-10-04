@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Menu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
 </head>
 <body>
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span class="toggle-icon">🌙</span>
+    <span class="toggle-text">Dark Mode</span>
+</button>
 
 <!-- Menu toggle using checkbox -->
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -25,7 +31,46 @@
 <div class="content">
     <h1>Welcome to the Sliding Menu Demo</h1>
     <p>Click the menu icon to open/close the menu.</p>
+    <p>🌙 Click the theme toggle button in the top-right to switch between light and dark modes!</p>
 </div>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Update toggle button
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const toggleText = document.querySelector('.toggle-text');
+        
+        if (newTheme === 'dark') {
+            toggleIcon.textContent = '☀️';
+            toggleText.textContent = 'Light Mode';
+        } else {
+            toggleIcon.textContent = '🌙';
+            toggleText.textContent = 'Dark Mode';
+        }
+    }
+
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Update toggle button state
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const toggleText = document.querySelector('.toggle-text');
+        
+        if (savedTheme === 'dark') {
+            toggleIcon.textContent = '☀️';
+            toggleText.textContent = 'Light Mode';
+        }
+    });
+</script>
 
 </body>
 </html>

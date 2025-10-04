@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Toggle - Hacktoberfest</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/dark-theme.css">
+    <style>
+        /* Demo page specific styles */
+        .theme-demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .demo-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .demo-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .theme-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .component-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+        
+        .component-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            margin-right: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="toggle-icon">🌙</span>
+        <span class="toggle-text">Dark Mode</span>
+    </button>
+
+    <div class="theme-demo-container">
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">
+                🌙 Dark Theme System
+            </h1>
+            <p style="font-size: 1.2rem; color: #7f8c8d;">
+                Complete dark theme implementation with smooth transitions
+            </p>
+        </header>
+
+        <!-- Theme Features Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">✨ Dark Theme Features</h2>
+            <p class="demo-subtitle">Comprehensive dark theme implementation across all components</p>
+            
+            <div class="theme-showcase">
+                <div class="component-card">
+                    <h3 class="component-title">🎨 Color System</h3>
+                    <ul class="feature-list">
+                        <li>CSS Custom Properties for easy theme switching</li>
+                        <li>Consistent color palette across all components</li>
+                        <li>Proper contrast ratios for accessibility</li>
+                        <li>Smooth transitions between themes</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">🔧 Components</h3>
+                    <ul class="feature-list">
+                        <li>Navigation bar and menus</li>
+                        <li>Buttons and interactive elements</li>
+                        <li>Cards and modals</li>
+                        <li>Forms and inputs</li>
+                        <li>Gallery and media components</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">📱 Responsive</h3>
+                    <ul class="feature-list">
+                        <li>Mobile-first design approach</li>
+                        <li>Touch-friendly toggle button</li>
+                        <li>Adaptive layouts for all screen sizes</li>
+                        <li>Optimized performance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Showcase -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎭 Button Styles in Dark Theme</h2>
+            <p class="demo-subtitle">All button variants with enhanced dark theme styling</p>
+            
+            <div class="button-grid">
+                <button class="btn-primary">Primary</button>
+                <button class="btn-secondary">Secondary</button>
+                <button class="btn-outline">Outline</button>
+                <button class="btn-ghost">Ghost</button>
+                <button class="btn-success">Success</button>
+                <button class="btn-warning">Warning</button>
+                <button class="btn-danger">Danger</button>
+                <button class="btn-gradient">Gradient</button>
+            </div>
+        </section>
+
+        <!-- Implementation Guide -->
+        <section class="demo-section">
+            <h2 class="demo-title">🚀 Implementation Guide</h2>
+            <p class="demo-subtitle">How to use the dark theme system</p>
+            
+            <div class="component-card">
+                <h3 class="component-title">1. Include CSS Files</h3>
+                <div class="code-block">
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;link rel="stylesheet" href="css/dark-theme.css"&gt;
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <h3 class="component-title">2. Add Theme Toggle Button</h3>
+                <div class="code-block">
+&lt;button class="theme-toggle" onclick="toggleTheme()"&gt;
+    &lt;span class="toggle-icon"&gt;🌙&lt;/span&gt;
+    &lt;span class="toggle-text"&gt;Dark Mode&lt;/span&gt;
+&lt;/button&gt;
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <h3 class="component-title">3. Add JavaScript Function</h3>
+                <div class="code-block">
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update toggle button
+    const toggleIcon = document.querySelector('.toggle-icon');
+    const toggleText = document.querySelector('.toggle-text');
+    
+    if (newTheme === 'dark') {
+        toggleIcon.textContent = '☀️';
+        toggleText.textContent = 'Light Mode';
+    } else {
+        toggleIcon.textContent = '🌙';
+        toggleText.textContent = 'Dark Mode';
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Update toggle button state
+    const toggleIcon = document.querySelector('.toggle-icon');
+    const toggleText = document.querySelector('.toggle-text');
+    
+    if (savedTheme === 'dark') {
+        toggleIcon.textContent = '☀️';
+        toggleText.textContent = 'Light Mode';
+    }
+});
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎯 Benefits</h2>
+            <p class="demo-subtitle">Why this dark theme implementation is awesome</p>
+            
+            <div class="theme-showcase">
+                <div class="component-card">
+                    <h3 class="component-title">👁️ User Experience</h3>
+                    <p>Reduces eye strain in low-light environments and provides a modern, sleek appearance that many users prefer.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">♿ Accessibility</h3>
+                    <p>Maintains proper contrast ratios and follows WCAG guidelines for inclusive design.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">🔋 Performance</h3>
+                    <p>CSS-only implementation with smooth transitions and no JavaScript dependencies for theme switching.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update toggle button
+            const toggleIcon = document.querySelector('.toggle-icon');
+            const toggleText = document.querySelector('.toggle-text');
+            
+            if (newTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Update toggle button state
+            const toggleIcon = document.querySelector('.toggle-icon');
+            const toggleText = document.querySelector('.toggle-text');
+            
+            if (savedTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>
