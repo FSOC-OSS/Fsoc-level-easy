@@ -35,18 +35,31 @@ h1{
     justify-content: space-between;
     text-align: center;
 }
+/* Enhanced Button Styles with Improved Shadows */
 .button{
     display:inline-block;
-    border-radius:6px;
+    border-radius:8px;
     text-decoration: none;
-    padding:8px 10px;
-    transition: background 0.3s ease;
+    padding:12px 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: aliceblue;
-
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
 }
 .button:hover{
     background-color: #856de9;
-
+    color: white;
+    box-shadow: 0 6px 20px rgba(133, 109, 233, 0.3);
+    transform: translateY(-2px);
+}
+.button:active{
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .different-plan:hover{
     transform: translateY(-6px);

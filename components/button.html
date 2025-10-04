@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Button Shadows - Hacktoberfest</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Demo page specific styles */
+        .button-demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .demo-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .demo-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .button-example {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .button-label {
+            font-size: 0.9rem;
+            color: #34495e;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* Enhanced button styles will be added to main CSS file */
+    </style>
+</head>
+<body>
+    <div class="button-demo-container">
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; color: #2c3e50; margin-bottom: 1rem;">
+                🎨 Enhanced Button Shadows
+            </h1>
+            <p style="font-size: 1.2rem; color: #7f8c8d;">
+                Subtle and dynamic shadows for better visual appeal
+            </p>
+        </header>
+
+        <!-- Primary Buttons Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">Primary Buttons</h2>
+            <p class="demo-subtitle">Main action buttons with enhanced shadow effects</p>
+            
+            <div class="button-grid">
+                <div class="button-example">
+                    <button class="btn-primary">Get Started</button>
+                    <span class="button-label">Primary Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-primary btn-large">Learn More</button>
+                    <span class="button-label">Large Primary</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-primary btn-small">Save</button>
+                    <span class="button-label">Small Primary</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Buttons Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">Secondary Buttons</h2>
+            <p class="demo-subtitle">Alternative actions with subtle shadow styling</p>
+            
+            <div class="button-grid">
+                <div class="button-example">
+                    <button class="btn-secondary">Cancel</button>
+                    <span class="button-label">Secondary Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-outline">View Details</button>
+                    <span class="button-label">Outline Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-ghost">Skip</button>
+                    <span class="button-label">Ghost Button</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success & Warning Buttons -->
+        <section class="demo-section">
+            <h2 class="demo-title">Status Buttons</h2>
+            <p class="demo-subtitle">Contextual buttons for different states</p>
+            
+            <div class="button-grid">
+                <div class="button-example">
+                    <button class="btn-success">✓ Confirm</button>
+                    <span class="button-label">Success Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-warning">⚠ Warning</button>
+                    <span class="button-label">Warning Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-danger">✗ Delete</button>
+                    <span class="button-label">Danger Button</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Buttons -->
+        <section class="demo-section">
+            <h2 class="demo-title">Interactive Effects</h2>
+            <p class="demo-subtitle">Buttons with dynamic shadow animations</p>
+            
+            <div class="button-grid">
+                <div class="button-example">
+                    <button class="btn-floating">🎯</button>
+                    <span class="button-label">Floating Action</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-gradient">Gradient Magic</button>
+                    <span class="button-label">Gradient Button</span>
+                </div>
+                
+                <div class="button-example">
+                    <button class="btn-neon">Neon Glow</button>
+                    <span class="button-label">Neon Effect</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Groups -->
+        <section class="demo-section">
+            <h2 class="demo-title">Button Groups</h2>
+            <p class="demo-subtitle">Multiple buttons working together</p>
+            
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn-group">First</button>
+                <button class="btn-group">Second</button>
+                <button class="btn-group">Third</button>
+            </div>
+        </section>
+
+        <!-- Code Examples -->
+        <section class="demo-section">
+            <h2 class="demo-title">Implementation</h2>
+            <p class="demo-subtitle">These enhanced shadow effects are implemented in css/style.css</p>
+            
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                <h3 style="color: #495057; margin-bottom: 1rem;">Key Features:</h3>
+                <ul style="color: #6c757d; line-height: 1.6;">
+                    <li>✅ Subtle shadows on default state</li>
+                    <li>✅ Dynamic shadow enhancement on hover</li>
+                    <li>✅ Consistent shadow system across all buttons</li>
+                    <li>✅ Smooth transitions and animations</li>
+                    <li>✅ Responsive design considerations</li>
+                    <li>✅ Accessibility-friendly focus states</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
