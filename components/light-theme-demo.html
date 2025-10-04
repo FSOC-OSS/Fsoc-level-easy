@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Light Theme Demo - Hacktoberfest</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/light-theme.css">
+    <link rel="stylesheet" href="../css/dark-theme.css">
+    <style>
+        /* Demo page specific styles */
+        .light-demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .demo-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .demo-title {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .theme-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .component-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        
+        .component-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #475569;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .feature-list li:before {
+            content: "✨ ";
+            margin-right: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #dbeafe 0%, #e0e7ff 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .color-swatch {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .primary-color { background: #3b82f6; }
+        .secondary-color { background: #06b6d4; }
+        .success-color { background: #10b981; }
+        .warning-color { background: #f59e0b; }
+        .danger-color { background: #ef4444; }
+        .neutral-color { background: #64748b; }
+    </style>
+</head>
+<body data-theme="light">
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="toggle-icon">🌙</span>
+        <span class="toggle-text">Dark Mode</span>
+    </button>
+
+    <div class="light-demo-container">
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                ☀️ Enhanced Light Theme
+            </h1>
+            <p style="font-size: 1.2rem; color: #475569;">
+                Beautiful, modern light theme with enhanced visual appeal
+            </p>
+        </header>
+
+        <!-- Color Palette Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎨 Enhanced Color Palette</h2>
+            <p class="demo-subtitle">Carefully crafted colors for optimal readability and visual appeal</p>
+            
+            <div class="color-palette">
+                <div class="color-swatch primary-color">Primary<br>#3b82f6</div>
+                <div class="color-swatch secondary-color">Secondary<br>#06b6d4</div>
+                <div class="color-swatch success-color">Success<br>#10b981</div>
+                <div class="color-swatch warning-color">Warning<br>#f59e0b</div>
+                <div class="color-swatch danger-color">Danger<br>#ef4444</div>
+                <div class="color-swatch neutral-color">Neutral<br>#64748b</div>
+            </div>
+        </section>
+
+        <!-- Enhanced Features Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">✨ Enhanced Light Theme Features</h2>
+            <p class="demo-subtitle">Modern design improvements for better user experience</p>
+            
+            <div class="theme-showcase">
+                <div class="component-card">
+                    <h3 class="component-title">🎨 Visual Enhancements</h3>
+                    <ul class="feature-list">
+                        <li>Gradient backgrounds for headers and buttons</li>
+                        <li>Enhanced shadows and depth effects</li>
+                        <li>Smooth animations and transitions</li>
+                        <li>Improved contrast ratios</li>
+                        <li>Modern glassmorphism effects</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">🔧 Component Updates</h3>
+                    <ul class="feature-list">
+                        <li>Enhanced navigation with hover effects</li>
+                        <li>Improved button styles and animations</li>
+                        <li>Better card designs with subtle borders</li>
+                        <li>Enhanced form inputs and focus states</li>
+                        <li>Modern modal and overlay designs</li>
+                    </ul>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">📱 Responsive Design</h3>
+                    <ul class="feature-list">
+                        <li>Mobile-first approach</li>
+                        <li>Touch-friendly interactive elements</li>
+                        <li>Adaptive layouts for all screen sizes</li>
+                        <li>Optimized performance</li>
+                        <li>Cross-browser compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Showcase -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎭 Enhanced Button Styles</h2>
+            <p class="demo-subtitle">Beautiful buttons with modern animations and effects</p>
+            
+            <div class="button-grid">
+                <button class="btn-primary">Primary</button>
+                <button class="btn-secondary">Secondary</button>
+                <button class="btn-outline">Outline</button>
+                <button class="btn-ghost">Ghost</button>
+                <button class="btn-success">Success</button>
+                <button class="btn-warning">Warning</button>
+                <button class="btn-danger">Danger</button>
+                <button class="btn-gradient">Gradient</button>
+            </div>
+        </section>
+
+        <!-- Implementation Guide -->
+        <section class="demo-section">
+            <h2 class="demo-title">🚀 Implementation Guide</h2>
+            <p class="demo-subtitle">How to use the enhanced light theme system</p>
+            
+            <div class="component-card">
+                <h3 class="component-title">1. Include CSS Files</h3>
+                <div class="code-block">
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;link rel="stylesheet" href="css/light-theme.css"&gt;
+&lt;link rel="stylesheet" href="css/dark-theme.css"&gt;
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <h3 class="component-title">2. Set Light Theme as Default</h3>
+                <div class="code-block">
+&lt;body data-theme="light"&gt;
+  <!-- Your content here -->
+&lt;/body&gt;
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <h3 class="component-title">3. Add Theme Toggle (Optional)</h3>
+                <div class="code-block">
+&lt;button class="theme-toggle" onclick="toggleTheme()"&gt;
+    &lt;span class="toggle-icon"&gt;🌙&lt;/span&gt;
+    &lt;span class="toggle-text"&gt;Dark Mode&lt;/span&gt;
+&lt;/button&gt;
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="demo-section">
+            <h2 class="demo-title">🎯 Benefits</h2>
+            <p class="demo-subtitle">Why this enhanced light theme is awesome</p>
+            
+            <div class="theme-showcase">
+                <div class="component-card">
+                    <h3 class="component-title">👁️ User Experience</h3>
+                    <p>Clean, modern design that's easy on the eyes with excellent readability and professional appearance.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">♿ Accessibility</h3>
+                    <p>Enhanced contrast ratios and focus states that meet WCAG guidelines for inclusive design.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">🎨 Modern Design</h3>
+                    <p>Contemporary styling with gradients, shadows, and smooth animations that feel premium.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="demo-section">
+            <h2 class="demo-title">🔧 Technical Details</h2>
+            <p class="demo-subtitle">Advanced CSS features and implementation details</p>
+            
+            <div class="theme-showcase">
+                <div class="component-card">
+                    <h3 class="component-title">CSS Custom Properties</h3>
+                    <p>Uses <span class="highlight">CSS variables</span> for consistent theming and easy customization.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">Smooth Animations</h3>
+                    <p>Implemented with <span class="highlight">cubic-bezier</span> easing for professional feel.</p>
+                </div>
+                
+                <div class="component-card">
+                    <h3 class="component-title">Performance Optimized</h3>
+                    <p>Hardware-accelerated animations and efficient CSS for smooth performance.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update toggle button
+            const toggleIcon = document.querySelector('.toggle-icon');
+            const toggleText = document.querySelector('.toggle-text');
+            
+            if (newTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            } else {
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Update toggle button state
+            const toggleIcon = document.querySelector('.toggle-icon');
+            const toggleText = document.querySelector('.toggle-text');
+            
+            if (savedTheme === 'dark') {
+                toggleIcon.textContent = '☀️';
+                toggleText.textContent = 'Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,723 @@
+/* ========================================
+   ENHANCED LIGHT THEME - HACKTOBERFEST
+   ======================================== */
+
+/* Enhanced Light Theme CSS Custom Properties */
+:root {
+  /* Enhanced Light Theme Variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-accent: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-accent: #3b82f6;
+  --border-color: #e2e8f0;
+  --border-accent: #cbd5e1;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+  --accent-primary: #3b82f6;
+  --accent-secondary: #06b6d4;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-danger: #ef4444;
+  --accent-hover: #2563eb;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Enhanced Light Theme Base Styles */
+[data-theme="light"] body {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced Light Theme Navigation */
+[data-theme="light"] .navbar {
+  background: var(--bg-primary) !important;
+  box-shadow: 0 2px 12px var(--shadow-light) !important;
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .mysite {
+  color: var(--accent-primary) !important;
+  font-weight: 700;
+  text-shadow: 0 1px 2px var(--shadow-light);
+}
+
+[data-theme="light"] .mysite:hover {
+  color: var(--accent-hover) !important;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .nav_links li a {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .nav_links li a:hover,
+[data-theme="light"] .nav_links li a:focus {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Enhanced Light Theme Header */
+[data-theme="light"] header {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+[data-theme="light"] header h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] header p {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Light Theme Main Content */
+[data-theme="light"] main {
+  background: var(--bg-secondary) !important;
+}
+
+[data-theme="light"] .fade-in {
+  color: var(--text-primary) !important;
+}
+
+/* Enhanced Light Theme Cards and Components */
+[data-theme="light"] .different-plan {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 16px var(--shadow-light) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .different-plan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+[data-theme="light"] .different-plan:hover {
+  box-shadow: 0 8px 32px var(--shadow-medium) !important;
+  border-color: var(--accent-primary) !important;
+  transform: translateY(-4px);
+}
+
+[data-theme="light"] .different-plan:hover::before {
+  transform: scaleX(1);
+}
+
+[data-theme="light"] .different-plan h2 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+[data-theme="light"] .different-plan li {
+  color: var(--text-secondary) !important;
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] .different-plan:hover li {
+  color: var(--text-primary) !important;
+}
+
+/* Enhanced Light Theme Buttons */
+[data-theme="light"] .button {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 8px var(--shadow-light) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+[data-theme="light"] .button span,
+[data-theme="light"] .button {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .button:hover {
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px var(--shadow-medium) !important;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .button:hover::before {
+  left: 0;
+}
+
+/* Enhanced Light Theme Primary Buttons */
+[data-theme="light"] .btn-primary {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px var(--shadow-medium) !important;
+  border: none !important;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 8px 32px var(--shadow-strong) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+[data-theme="light"] .btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Enhanced Light Theme Secondary Buttons */
+[data-theme="light"] .btn-secondary {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid var(--border-accent) !important;
+  box-shadow: 0 2px 8px var(--shadow-light) !important;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: var(--bg-accent) !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 6px 20px var(--shadow-medium) !important;
+  transform: translateY(-2px);
+}
+
+/* Enhanced Light Theme Outline Buttons */
+[data-theme="light"] .btn-outline {
+  color: var(--accent-primary) !important;
+  border: 2px solid var(--accent-primary) !important;
+  background: transparent !important;
+  box-shadow: 0 2px 8px var(--shadow-light) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-primary);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+[data-theme="light"] .btn-outline span {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .btn-outline:hover {
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px var(--shadow-medium) !important;
+  transform: translateY(-2px);
+}
+
+[data-theme="light"] .btn-outline:hover::before {
+  left: 0;
+}
+
+/* Enhanced Light Theme Ghost Buttons */
+[data-theme="light"] .btn-ghost {
+  color: var(--text-secondary) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-theme="light"] .btn-ghost:hover {
+  color: var(--text-primary) !important;
+  background: var(--bg-tertiary) !important;
+  box-shadow: 0 2px 8px var(--shadow-light) !important;
+  transform: translateY(-1px);
+}
+
+/* Enhanced Light Theme Success Buttons */
+[data-theme="light"] .btn-success {
+  background: var(--gradient-success) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2) !important;
+}
+
+[data-theme="light"] .btn-success:hover {
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Enhanced Light Theme Warning Buttons */
+[data-theme="light"] .btn-warning {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2) !important;
+}
+
+[data-theme="light"] .btn-warning:hover {
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Enhanced Light Theme Danger Buttons */
+[data-theme="light"] .btn-danger {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2) !important;
+}
+
+[data-theme="light"] .btn-danger:hover {
+  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Enhanced Light Theme Footer */
+[data-theme="light"] footer {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -2px 12px var(--shadow-light);
+}
+
+[data-theme="light"] footer a {
+  color: var(--text-secondary) !important;
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] footer a:hover {
+  color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] .linkToFest {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .linkToFest span a {
+  color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] .linkToFest span a:hover {
+  color: var(--accent-hover) !important;
+}
+
+[data-theme="light"] .linkToSocials > p,
+[data-theme="light"] .contactUs > p {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .contactUs ul li {
+  color: var(--text-secondary) !important;
+}
+
+/* Enhanced Light Theme Modal */
+[data-theme="light"] .modalBox {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 20px 60px var(--shadow-strong) !important;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .modalBox .modalTitle {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .modalBox .modalContent {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .modalBox p a {
+  color: var(--accent-danger) !important;
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] .modalBox p a:hover {
+  color: #dc2626 !important;
+}
+
+/* Enhanced Light Theme Gallery */
+[data-theme="light"] .image-gallery {
+  background: var(--bg-secondary) !important;
+}
+
+[data-theme="light"] .gallery-item {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-light) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] .gallery-item:hover {
+  box-shadow: 0 12px 40px var(--shadow-medium) !important;
+  border-color: var(--accent-primary);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Enhanced Light Theme Login Page */
+[data-theme="light"] body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  min-height: 100vh;
+}
+
+[data-theme="light"] section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  position: relative;
+}
+
+[data-theme="light"] section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+[data-theme="light"] .login-box {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .login-box h2 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .input-box {
+  border-bottom: 2px solid var(--border-color) !important;
+  transition: border-color 0.3s ease;
+}
+
+[data-theme="light"] .input-box:focus-within {
+  border-bottom-color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] .input-box label {
+  color: var(--text-secondary) !important;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .input-box input {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+[data-theme="light"] .input-box input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .login-box .icon {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .remember-forgot {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .remember-forgot a {
+  color: var(--accent-primary) !important;
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] .remember-forgot a:hover {
+  color: var(--accent-hover) !important;
+}
+
+[data-theme="light"] button[type="submit"] {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px var(--shadow-medium) !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+[data-theme="light"] button[type="submit"]:hover {
+  box-shadow: 0 8px 32px var(--shadow-strong) !important;
+  transform: translateY(-2px) scale(1.02);
+}
+
+[data-theme="light"] .register-link {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .register-link p a {
+  color: var(--accent-primary) !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] .register-link p a:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* Enhanced Light Theme Sliding Menu */
+[data-theme="light"] .sliding-menu {
+  background: var(--bg-primary) !important;
+  border-right: 1px solid var(--border-color);
+  box-shadow: 2px 0 12px var(--shadow-light);
+}
+
+[data-theme="light"] .sliding-menu a {
+  color: var(--text-primary) !important;
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .sliding-menu a:hover {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+/* Enhanced Light Theme Typewriter */
+[data-theme="light"] .typewriter-card {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+[data-theme="light"] .typewriter-text {
+  color: var(--text-primary) !important;
+}
+
+/* Enhanced Light Theme Loader */
+[data-theme="light"] .loader-wrapper {
+  background: var(--bg-secondary) !important;
+}
+
+[data-theme="light"] .loading-spinner {
+  border: 10px solid var(--border-color) !important;
+  border-top: 10px solid var(--accent-primary) !important;
+}
+
+/* Enhanced Light Theme Button Demo Page */
+[data-theme="light"] .button-demo-container {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%) !important;
+}
+
+[data-theme="light"] .demo-section {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-light) !important;
+}
+
+[data-theme="light"] .demo-title {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .demo-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .button-label {
+  color: var(--text-secondary) !important;
+}
+
+/* Enhanced Light Theme for Input Elements */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus {
+  outline: none !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Enhanced Light Theme for Checkboxes and Radio Buttons */
+[data-theme="light"] input[type="checkbox"],
+[data-theme="light"] input[type="radio"] {
+  accent-color: var(--accent-primary);
+}
+
+/* Enhanced Light Theme for Links */
+[data-theme="light"] a {
+  color: var(--accent-primary);
+  transition: color 0.2s ease;
+}
+
+[data-theme="light"] a:hover {
+  color: var(--accent-hover);
+}
+
+/* Enhanced Light Theme for Headings */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Enhanced Light Theme for Paragraphs */
+[data-theme="light"] p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Enhanced Light Theme for Lists */
+[data-theme="light"] ul,
+[data-theme="light"] ol {
+  color: var(--text-secondary);
+}
+
+/* Enhanced Light Theme for Code Elements */
+[data-theme="light"] code,
+[data-theme="light"] pre {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* Enhanced Light Theme for Blockquotes */
+[data-theme="light"] blockquote {
+  border-left: 4px solid var(--accent-primary);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 1rem;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Enhanced Light Theme for Tables */
+[data-theme="light"] table {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+[data-theme="light"] th,
+[data-theme="light"] td {
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Enhanced Light Theme for HR Elements */
+[data-theme="light"] hr {
+  border-color: var(--border-color);
+  background-color: var(--border-color);
+}
+
+/* Enhanced Light Theme Toggle Button */
+[data-theme="light"] .theme-toggle {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px var(--shadow-light);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 6px 24px var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Enhanced Light Theme */
+@media (max-width: 768px) {
+  [data-theme="light"] .different-plan {
+    margin-bottom: 1rem;
+  }
+  
+  [data-theme="light"] .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  [data-theme="light"] .login-box {
+    width: 90%;
+    margin: 1rem;
+  }
+}
+
+/* Smooth transitions for all enhanced light theme changes */
+[data-theme="light"] * {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+}
+
+/* Focus accessibility improvements for light theme */
+[data-theme="light"] button:focus-visible,
+[data-theme="light"] .btn-base:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled state for light theme */
+[data-theme="light"] button:disabled,
+[data-theme="light"] .btn-base:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
