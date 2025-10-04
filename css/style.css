@@ -1,8 +1,9 @@
-body{
-    padding:2rem;
-    font-family:Arial, Helvetica, sans-serif;
-    background:rgb(145, 204, 232);
+@import url("./variables.css");
 
+body{
+    padding: var(--space-8);
+    font-family: var(--font-ui);
+    background: var(--background-color);
 }
 
 h1{
@@ -24,7 +25,7 @@ h1{
 
 .different-plan{
     flex: 1 1 250px;
-    background-color: antiquewhite;
+    background-color: var(--surface-2-color);
     border-radius:12px;
     padding: 35px;
     max-width:300px;
@@ -38,16 +39,17 @@ h1{
 .button{
 
     display:inline-block;
-    border-radius:6px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     padding:8px 10px;
     transition: all 0.3s ease;
-    background-color: aliceblue;
+    background-color: var(--surface-2-color);
     box-shadow: 2px 2px 4px rgba(82, 74, 74, 0.573);
 }
 
 .button:hover {
-    background-color: #a796ed;
+    background-color: var(--primary-color);
+    color: var(--primary-contrast);
     box-shadow: 2px 2px 10px rgb(86, 79, 79);
     transform: translateY(-2px);
 }
@@ -86,15 +88,15 @@ h2{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f5f7fa;
+  background: var(--background-color);
 }
 
 /* Spinner styles */
 .loading-spinner {
   width: 60px;
   height: 60px;
-  border: 10px solid #ccc;
-  border-top: 10px solid #6200ea;
+  border: 10px solid var(--border-color);
+  border-top: 10px solid var(--primary-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -117,9 +119,9 @@ h2{
 .glow-btn {
   padding: 12px 24px;
   font-size: 16px;
-  color: #a84141;
-  background-color: #f6f603;  
-  border-radius: 8px;
+  color: var(--text-color);
+  background-color: var(--accent-color);  
+  border-radius: var(--radius);
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;

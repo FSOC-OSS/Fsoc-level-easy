@@ -1,14 +1,16 @@
+@import url("./css/variables.css");
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
     margin: 0;
     padding: 0;
     text-align: center;
-    background: #f5f7fa;
-    color: #333;
+    background: var(--background-color);
+    color: var(--text-color);
   }
 html{
   scroll-behavior: smooth;
@@ -17,23 +19,23 @@ html{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: var(--nav-bg-color);
   padding: 0.75rem 2rem;
-  box-shadow: 0 2px 8px rgba(98,0,234,0.07);
+  box-shadow: 0 2px 8px var(--shadow-color);
   position: relative;
   font-size: 1.1rem;
 }
 
 .mysite {
   font-weight: bold;
-  color: #6200ea;
+  color: var(--primary-color);
   font-size: 1.4rem;
   letter-spacing: 1px;
   cursor:pointer;
 }
 
 .mysite:hover{
-  color:#d213c2;
+  color: var(--accent-color);
 }
 .nav_links {
   list-style: none;
@@ -45,7 +47,7 @@ html{
 
 .nav_links li a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   padding: 0.5rem 1rem;
   border-radius: 24px;
   transition: background 0.2s, color 0.2s;
@@ -53,8 +55,8 @@ html{
 
 .nav_links li a:hover,
 .nav_links li a:focus {
-  background: #6200ea;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--primary-contrast);
 }
 
 .nav_toggle {
@@ -75,7 +77,7 @@ html{
   display: block;
   height: 4px;
   width: 100%;
-  background: #6200ea;
+  background: var(--primary-color);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -124,9 +126,9 @@ html{
   }
 }
 
-  header {
-    background: #6200ea;
-    color: white;
+header {
+    background: var(--primary-color);
+    color: var(--primary-contrast);
     padding: 2rem 1rem;
   }
   
@@ -157,10 +159,10 @@ html{
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
-  background: #03dac6;
+  color: var(--primary-contrast);
+  background: var(--secondary-color);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   box-shadow: 0 2px 8px rgba(3, 218, 198, 0.15);
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -168,14 +170,14 @@ html{
 
 .btn:hover,
 .btn:focus {
-  background: #018786;
+  background: var(--secondary-dark);
   box-shadow: 0 6px 24px rgba(3, 218, 198, 0.25);
   transform: translateY(-2px) scale(1.04);
   outline: none;
 }
 
 .btn:active {
-  background: #02675b;
+  background: var(--secondary-darker);
   box-shadow: 0 1px 4px rgba(3, 218, 198, 0.18);
   transform: translateY(1px) scale(0.98);
 }
@@ -246,10 +248,10 @@ html{
   color: rgb(255, 0, 0);
 }
 
-  footer {
+footer {
     
-    background: #222;
-    color: white;
+    background: var(--footer-bg-color);
+    color: var(--primary-contrast);
     padding: 1rem;
     margin-top: 2rem;
     
@@ -264,10 +266,10 @@ html{
     color: white;
   }
 
-  .linkToFest{
+.linkToFest{
     margin-left:12px ;
     font-size: 18px;
-    color: #ccc;
+    color: var(--border-color);
     text-align: left;
     
   }
@@ -276,12 +278,12 @@ html{
     font-size: 20px;
   }
   
-  .linkToFest span a{
-    color: #b0a0c8e9;
+.linkToFest span a{
+    color: var(--accent-color);
   }
 
   .linkToFest span a:hover{
-    color:#6550e8f4;
+    color: var(--primary-color);
   }
 
   .footerMiddle{
@@ -527,10 +529,10 @@ footer {
     top: 1rem;
     left: 1rem;
     z-index: 1001;
-    background-color:cadetblue;
-    color:#222;
+    background-color: var(--accent-color);
+    color: #222;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: var(--radius);
 }
 
 .sliding-menu {
@@ -539,7 +541,7 @@ footer {
     left: -250px; /* hidden by default */
     width: 250px;
     height: 100%;
-    background-color:blanchedalmond;
+    background-color: var(--surface-2-color);
     box-shadow: 2px 0 10px var(--shadow-color);
     transition: left 0.3s ease;
     padding-top: 4rem;
@@ -557,7 +559,7 @@ footer {
 
 .sliding-menu a {
     text-decoration: none;
-    color: #018786;
+    color: var(--secondary-dark);
     font-weight: 600;
     padding: 0.5rem 1rem;
     display: block;
@@ -688,15 +690,15 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   padding: 2rem 1rem;
-  background: #f5f7fa;
+  background: var(--background-color);
   justify-items: center;
 }
 
 .gallery-item {
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(98,0,234,0.07);
-  background: #fff;
+  box-shadow: 0 2px 12px var(--shadow-color);
+  background: var(--surface-color);
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
