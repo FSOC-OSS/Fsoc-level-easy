@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact — APS_X</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Component</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="mysite">APS_X</div>
-    <input type="checkbox" id="nav_toggle" class="nav_toggle">
-    <label for="nav_toggle" class="nav_icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <ul class="nav_links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html">About</a></li>
-      <li><a href="../index.html">Projects</a></li>
-      <li><a href="form.html">Contact</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="../login.html">Login</a></li>
-    </ul>
-  </nav>
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Contact Form</h2>
+      <p>Fill out the form below</p>
+    </div>
 
-  <main>
-    <section class="contact-wrap">
-      <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>Have questions, feedback or an idea? Send us a message and our team will get back to you soon. We aim to reply within 2 business days.</p>
-
-        <p class="hint">Prefer email? Write to <a href="mailto:sample@example.com">sample@example.com</a></p>
-
-        <hr>
-        <p class="hint">Office: 1212344556</p>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name">
       </div>
 
-      <form class="contact-form" action="#" novalidate>
-        <div class="two-col">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" placeholder="Sample Name" required>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 12345 67890">
+      </div>
+
+      <div class="form-group">
+        <label for="subject" class="form-label">Subject</label>
+        <select id="subject" name="subject" class="form-select">
+          <option value="">Select subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Technical Support</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Gender</label>
+        <div class="form-radio-group">
+          <div class="form-radio-item">
+            <input type="radio" id="male" name="gender" value="male" class="form-radio-input">
+            <label for="male" class="form-radio-label">Male</label>
           </div>
-
-          <div class="field">
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="sample@domain.com" required>
+          <div class="form-radio-item">
+            <input type="radio" id="female" name="gender" value="female" class="form-radio-input">
+            <label for="female" class="form-radio-label">Female</label>
+          </div>
+          <div class="form-radio-item">
+            <input type="radio" id="other" name="gender" value="other" class="form-radio-input">
+            <label for="other" class="form-radio-label">Other</label>
           </div>
         </div>
+      </div>
 
-        <div class="field">
-          <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text" placeholder="Sample subject">
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-textarea" placeholder="Write your message"></textarea>
+      </div>
+
+      <div class="form-group">
+        <div class="form-checkbox-group">
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox-input">
+            <label for="newsletter" class="form-checkbox-label">Subscribe to newsletter</label>
+          </div>
         </div>
+      </div>
 
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="This is a sample message about the project..."></textarea>
-        </div>
-
-        <div class="submit-row">
-          <span class="hint">We don't spam — your info is safe.</span>
-          <button class="btn-submit" type="submit">Send Message</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
+      <button type="submit" class="form-submit-btn">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
