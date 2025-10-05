@@ -6,13 +6,13 @@
   <title>Sample Card</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-
+    @import url("../css/variables.css");
     
     .card {
       max-width: 300px;
       margin: 20px auto;
-      background: white;
-      border-radius: 10px;
+      background: var(--surface-color);
+      border-radius: var(--radius);
       box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
     }
@@ -22,13 +22,13 @@
     }
     .card h3 {
       margin: 0;
-      padding: 1rem;
-      background: #6200ea;
-      color: white;
+      padding: var(--space-4);
+      background: var(--primary-color);
+      color: var(--primary-contrast);
     }
     .card p {
-      padding: 1rem;
-      color: #555;
+      padding: var(--space-4);
+      color: var(--text-muted);
     }
   </style>
 </head>

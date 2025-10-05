@@ -1,3 +1,5 @@
+@import url("./css/variables.css");
+
 /* Base styles */
 *,
 *::before,
@@ -8,9 +10,9 @@
 }
 
 .navbar {
-  background-color: #333;
-  color: #fff;
-  font-family: sans-serif;
+  background-color: var(--footer-bg-color);
+  color: var(--primary-contrast);
+  font-family: var(--font-sans);
 }
 
 .navbar__container {
@@ -49,7 +51,7 @@
 
 .navbar__link:hover,
 .navbar__link:focus {
-  color: #f0a500;
+  color: var(--accent-color);
 }
 
 /* Toggle (hidden) */

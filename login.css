@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("./css/variables.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 * {
     margin: 0;
@@ -29,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000;
+    background: var(--footer-bg-color);
 }
 
 .login-box {
@@ -47,7 +48,7 @@ body {
 
 h2 {
     font-size: 3em;
-    color: black;
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -55,7 +56,7 @@ h2 {
     position: relative;
     width: 310px;
     margin: 30px 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--text-color);
 }
 
 .input-box label {
@@ -64,7 +65,7 @@ h2 {
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: black;
+    color: var(--text-color);
     pointer-events: none;
     transition: 0.5s;
 }
@@ -81,14 +82,14 @@ h2 {
     border: none;
     outline: none;
     font-size: 1em;
-    color: black;
+    color: var(--text-color);
     padding: 0 35px 0 5px;
 }
 
 .login-box .icon {
     position: absolute;
     right: 8px;
-    color: black;
+    color: var(--text-color);
     font-size: 1.2em;
     line-height: 57px;
 }
@@ -96,7 +97,7 @@ h2 {
 .remember-forgot {
     margin: -15px 0 15px;
     font-size: 0.9em;
-    color: black;
+    color: var(--text-color);
     display: flex;
     justify-content: space-between;
 }
@@ -106,7 +107,7 @@ h2 {
 }
 
 .remember-forgot a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -117,13 +118,13 @@ h2 {
 button {
     width: 100%;
     height: 40px;
-    background: black;
+    background: var(--primary-color);
     border: none;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
-    color: #fff;
+    color: var(--primary-contrast);
     font-weight: 500;
 }
 
