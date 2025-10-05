@@ -3,6 +3,9 @@
 html {
   scroll-behavior: smooth;
 }
+:root {
+  --radius-main: 26px;
+}
 
 body {
     font-family: var(--font-sans);
@@ -11,6 +14,8 @@ body {
     text-align: center;
     background: var(--background-color);
     color: var(--text-color);
+    background: linear-gradient(120deg, #a6c4d3 0%, #0d205c 100%);
+  color: #333;
   }
 html{
   scroll-behavior: smooth;
@@ -130,6 +135,8 @@ header {
     background: var(--primary-color);
     color: var(--primary-contrast);
     padding: 2rem 1rem;
+      background: linear-gradient(135deg, #629d84 0%, #410d75 100%);
+  color: #fff;
   }
   
   h1 {
@@ -153,6 +160,7 @@ header {
   align-items: center;
   height: 100%;
   min-height: 200px;
+  border-radius: var(--radius-main);
 }
 
 .btn {
@@ -162,7 +170,7 @@ header {
   color: var(--primary-contrast);
   background: var(--secondary-color);
   border: none;
-  border-radius: var(--radius-pill);
+border-radius: var(--radius-main);
   box-shadow: 0 2px 8px rgba(3, 218, 198, 0.15);
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -190,6 +198,16 @@ header {
   }
   .btn_container {
     min-height: 120px;
+    border-radius: var(--radius-main);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .card, .typewriter-card {
+    padding: 1rem;
   }
 }
 
@@ -202,7 +220,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
-  border-radius: 20px;
+border-radius: var(--radius-main);
   width: 300px;
   height: 200px;
   background-color: rgb(255, 255, 255);
@@ -228,6 +246,7 @@ header {
   font-size: 20px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.759);
+  border-radius: var(--radius-main);
 
 }
 
@@ -398,6 +417,7 @@ h3 {
   justify-content: space-between;
   background: #f8f9fa;
   padding: 1rem 2rem;
+  border-radius: var(--radius-main);
 }
 
 .mysite {
@@ -439,6 +459,12 @@ header p {
 /* Main Content */
 main {
   padding: 2rem;
+  background: linear-gradient(120deg, #d7d6dc 0%, #28514f 100%);
+  border-radius: var(--radius-main);
+  box-shadow: 0 2px 12px var(--shadow-color);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
 }
 
 section h2 {
@@ -459,7 +485,7 @@ section h2 {
   background: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+border-radius: var(--radius-main);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -475,6 +501,8 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
+    background: linear-gradient(120deg, #9ca2a8 0%, #467bbb 100%);
+  color: #ecf0f1;
 }
 
 .footerMiddle {
@@ -532,8 +560,7 @@ footer {
     background-color: var(--accent-color);
     color: #222;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-}
+    border-radius: var(--radius-main);
 
 .sliding-menu {
     position: fixed;
@@ -546,6 +573,7 @@ footer {
     transition: left 0.3s ease;
     padding-top: 4rem;
     z-index: 1000;
+    border-radius: var(--radius-main);
 }
 
 .sliding-menu ul {
@@ -569,7 +597,7 @@ footer {
 .sliding-menu a:hover {
     background-color: var(--primary-color);
     color: white;
-    border-radius: 5px;
+ border-radius: var(--radius-main);
 }
 
 /* Toggle menu */
@@ -696,7 +724,7 @@ footer {
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-main);
   box-shadow: 0 2px 12px var(--shadow-color);
   background: var(--surface-color);
   transition: box-shadow 0.2s, transform 0.2s;
@@ -708,6 +736,7 @@ footer {
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s, filter 0.3s;
+  border-radius: var(--radius-main);
 }
 
 .gallery-item:hover,
@@ -767,7 +796,7 @@ body.dark-theme {
   background-color: #6200ea;
   color: #fff;
   border: none;
-  border-radius: 5px;
+border-radius: var(--radius-main);
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
