@@ -14,6 +14,8 @@ body {
     text-align: center;
     background: var(--background-color);
     color: var(--text-color);
+    background: linear-gradient(120deg, #a6c4d3 0%, #0d205c 100%);
+  color: #333;
   }
 html{
   scroll-behavior: smooth;
@@ -133,6 +135,8 @@ header {
     background: var(--primary-color);
     color: var(--primary-contrast);
     padding: 2rem 1rem;
+      background: linear-gradient(135deg, #629d84 0%, #410d75 100%);
+  color: #fff;
   }
   
   h1 {
@@ -195,6 +199,15 @@ border-radius: var(--radius-main);
   .btn_container {
     min-height: 120px;
     border-radius: var(--radius-main);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .card, .typewriter-card {
+    padding: 1rem;
   }
 }
 
@@ -446,6 +459,12 @@ header p {
 /* Main Content */
 main {
   padding: 2rem;
+  background: linear-gradient(120deg, #d7d6dc 0%, #28514f 100%);
+  border-radius: var(--radius-main);
+  box-shadow: 0 2px 12px var(--shadow-color);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
 }
 
 section h2 {
@@ -482,6 +501,8 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
+    background: linear-gradient(120deg, #9ca2a8 0%, #467bbb 100%);
+  color: #ecf0f1;
 }
 
 .footerMiddle {
