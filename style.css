@@ -443,3 +443,89 @@ footer {
     gap: 1rem;
   }
 }
+/* Progress bar component (responsive, CSS-only animation) */
+
+.progress-bar {
+  --height: 12px;
+  --radius: 999px;
+  --bg: rgba(0,0,0,0.08);
+  --fill: linear-gradient(90deg, #4f46e5, #06b6d4); /* purple -> teal */
+  --duration: 1.6s;
+
+  width: 100%;
+  max-width: 720px; /* container limit; adjust as needed */
+  margin: 0.75rem 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem;
+}
+
+.progress-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.progress-percent {
+  font-size: 0.9rem;
+  color: #374151;
+  min-width: 3.2ch;
+  text-align: right;
+}
+
+/* Track */
+.progress-track {
+  width: 100%;
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: var(--height);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Fill */
+.progress-fill {
+  height: 100%;
+  width: 0%; /* starts from 0 and animates to --value */
+  background: var(--fill);
+  border-radius: var(--radius);
+  transform-origin: left center;
+
+  /* animation from 0 -> var(--value) */
+  animation: fillToVar var(--duration) cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+/* Keyframes: animate width to the CSS property value */
+@keyframes fillToVar {
+  from { width: 0%; }
+  to   { width: calc(var(--value, 0) * 1%); }
+}
+
+/* Make percent text reflect same animation visually (optional): fade-in */
+.progress-percent {
+  opacity: 0;
+  animation: percentFade 0.6s ease forwards;
+  animation-delay: calc(var(--duration) - 0.5s);
+}
+@keyframes percentFade { to { opacity: 1; } }
+
+/* Accessibility / reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill { animation: none; width: calc(var(--value, 0) * 1%); }
+  .progress-percent { animation: none; opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .progress-bar { max-width: 100%; }
+  .progress-title { font-size: 0.9rem; }
+  .progress-percent { font-size: 0.85rem; }
+  .progress-bar { --height: 10px; }
+}
