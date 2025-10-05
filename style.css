@@ -775,4 +775,50 @@ body.dark-theme {
 .theme-toggle-btn:hover {
   background-color: #3700b3;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--surface-color, #fff);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--shadow-color, rgba(0,0,0,0.08));
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 350px;
+  width: 100%;
+  gap: 1rem;
+}
 
+.card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card .typewriter-text,
+.card p {
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.card .btn {
+  align-self: center;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+}
