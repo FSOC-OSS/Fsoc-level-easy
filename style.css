@@ -3,6 +3,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 <style>
     /* Default (light theme) */
     body {
@@ -54,6 +55,11 @@ html {
   </style>
 
 
+:root {
+  --radius-main: 26px;
+}
+
+
 body {
     font-family: var(--font-sans);
     margin: 0;
@@ -61,6 +67,8 @@ body {
     text-align: center;
     background: var(--background-color);
     color: var(--text-color);
+    background: linear-gradient(120deg, #a6c4d3 0%, #0d205c 100%);
+  color: #333;
   }
 html{
   scroll-behavior: smooth;
@@ -180,6 +188,8 @@ header {
     background: var(--primary-color);
     color: var(--primary-contrast);
     padding: 2rem 1rem;
+      background: linear-gradient(135deg, #629d84 0%, #410d75 100%);
+  color: #fff;
   }
   
   h1 {
@@ -203,6 +213,7 @@ header {
   align-items: center;
   height: 100%;
   min-height: 200px;
+  border-radius: var(--radius-main);
 }
 
 .btn {
@@ -212,7 +223,7 @@ header {
   color: var(--primary-contrast);
   background: var(--secondary-color);
   border: none;
-  border-radius: var(--radius-pill);
+border-radius: var(--radius-main);
   box-shadow: 0 2px 8px rgba(3, 218, 198, 0.15);
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -240,6 +251,16 @@ header {
   }
   .btn_container {
     min-height: 120px;
+    border-radius: var(--radius-main);
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .card, .typewriter-card {
+    padding: 1rem;
   }
 }
 
@@ -252,7 +273,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
-  border-radius: 20px;
+border-radius: var(--radius-main);
   width: 300px;
   height: 200px;
   background-color: rgb(255, 255, 255);
@@ -278,6 +299,7 @@ header {
   font-size: 20px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.759);
+  border-radius: var(--radius-main);
 
 }
 
@@ -296,6 +318,69 @@ header {
 
 .modalBox p a:hover{
   color: rgb(255, 0, 0);
+}
+.flip-card {
+  background: transparent;
+  width: 320px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 2rem auto;
+  border-radius: var(--radius-main);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius-main);
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-main);
+  box-shadow: 0 2px 12px var(--shadow-color, rgba(0,0,0,0.08));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 1.1rem;
+  padding: 1.5rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, #8a9db0 0%, #3357cb 100%);
+  color: #222;
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, #764ba2 0%, #667eea 100%);
+  color: #57ced6;
+  transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .flip-card {
+    width: 98vw;
+    height: 160px;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
 
 footer {
@@ -386,7 +471,7 @@ footer {
     color: rgba(220, 219, 219, 0.595);
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen (max-width: 600px) {
 
   .modalBox{
     left: 50px;
@@ -448,6 +533,7 @@ h3 {
   justify-content: space-between;
   background: #f8f9fa;
   padding: 1rem 2rem;
+  border-radius: var(--radius-main);
 }
 
 .mysite {
@@ -489,6 +575,12 @@ header p {
 /* Main Content */
 main {
   padding: 2rem;
+  background: linear-gradient(120deg, #d7d6dc 0%, #28514f 100%);
+  border-radius: var(--radius-main);
+  box-shadow: 0 2px 12px var(--shadow-color);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
 }
 
 section h2 {
@@ -509,7 +601,7 @@ section h2 {
   background: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+border-radius: var(--radius-main);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -525,6 +617,8 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
+    background: linear-gradient(120deg, #9ca2a8 0%, #467bbb 100%);
+  color: #ecf0f1;
 }
 
 .footerMiddle {
@@ -567,6 +661,92 @@ footer {
     gap: 1rem;
   }
 }
+/* Progress bar component (responsive, CSS-only animation) */
+
+.progress-bar {
+  --height: 12px;
+  --radius: 999px;
+  --bg: rgba(0,0,0,0.08);
+  --fill: linear-gradient(90deg, #4f46e5, #06b6d4); /* purple -> teal */
+  --duration: 1.6s;
+
+  width: 100%;
+  max-width: 720px; /* container limit; adjust as needed */
+  margin: 0.75rem 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem;
+}
+
+.progress-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.progress-percent {
+  font-size: 0.9rem;
+  color: #374151;
+  min-width: 3.2ch;
+  text-align: right;
+}
+
+/* Track */
+.progress-track {
+  width: 100%;
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: var(--height);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Fill */
+.progress-fill {
+  height: 100%;
+  width: 0%; /* starts from 0 and animates to --value */
+  background: var(--fill);
+  border-radius: var(--radius);
+  transform-origin: left center;
+
+  /* animation from 0 -> var(--value) */
+  animation: fillToVar var(--duration) cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+/* Keyframes: animate width to the CSS property value */
+@keyframes fillToVar {
+  from { width: 0%; }
+  to   { width: calc(var(--value, 0) * 1%); }
+}
+
+/* Make percent text reflect same animation visually (optional): fade-in */
+.progress-percent {
+  opacity: 0;
+  animation: percentFade 0.6s ease forwards;
+  animation-delay: calc(var(--duration) - 0.5s);
+}
+@keyframes percentFade { to { opacity: 1; } }
+
+/* Accessibility / reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill { animation: none; width: calc(var(--value, 0) * 1%); }
+  .progress-percent { animation: none; opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .progress-bar { max-width: 100%; }
+  .progress-title { font-size: 0.9rem; }
+  .progress-percent { font-size: 0.85rem; }
+  .progress-bar { --height: 10px; }
+}
 /* --- Sliding Menu --- */
 .menu-toggle {
     display: none;
@@ -582,8 +762,7 @@ footer {
     background-color: var(--accent-color);
     color: #222;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-}
+    border-radius: var(--radius-main);
 
 .sliding-menu {
     position: fixed;
@@ -596,6 +775,7 @@ footer {
     transition: left 0.3s ease;
     padding-top: 4rem;
     z-index: 1000;
+    border-radius: var(--radius-main);
 }
 
 .sliding-menu ul {
@@ -619,7 +799,7 @@ footer {
 .sliding-menu a:hover {
     background-color: var(--primary-color);
     color: white;
-    border-radius: 5px;
+ border-radius: var(--radius-main);
 }
 
 /* Toggle menu */
@@ -746,7 +926,7 @@ footer {
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-main);
   box-shadow: 0 2px 12px var(--shadow-color);
   background: var(--surface-color);
   transition: box-shadow 0.2s, transform 0.2s;
@@ -758,6 +938,7 @@ footer {
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s, filter 0.3s;
+  border-radius: var(--radius-main);
 }
 
 .gallery-item:hover,
@@ -817,7 +998,7 @@ body.dark-theme {
   background-color: #6200ea;
   color: #fff;
   border: none;
-  border-radius: 5px;
+border-radius: var(--radius-main);
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
