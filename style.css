@@ -3,6 +3,9 @@
 html {
   scroll-behavior: smooth;
 }
+:root {
+  --radius-main: 26px;
+}
 
 body {
     font-family: var(--font-sans);
@@ -153,6 +156,7 @@ header {
   align-items: center;
   height: 100%;
   min-height: 200px;
+  border-radius: var(--radius-main);
 }
 
 .btn {
@@ -162,7 +166,7 @@ header {
   color: var(--primary-contrast);
   background: var(--secondary-color);
   border: none;
-  border-radius: var(--radius-pill);
+border-radius: var(--radius-main);
   box-shadow: 0 2px 8px rgba(3, 218, 198, 0.15);
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
@@ -190,6 +194,7 @@ header {
   }
   .btn_container {
     min-height: 120px;
+    border-radius: var(--radius-main);
   }
 }
 
@@ -202,7 +207,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
-  border-radius: 20px;
+border-radius: var(--radius-main);
   width: 300px;
   height: 200px;
   background-color: rgb(255, 255, 255);
@@ -228,6 +233,7 @@ header {
   font-size: 20px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.759);
+  border-radius: var(--radius-main);
 
 }
 
@@ -398,6 +404,7 @@ h3 {
   justify-content: space-between;
   background: #f8f9fa;
   padding: 1rem 2rem;
+  border-radius: var(--radius-main);
 }
 
 .mysite {
@@ -459,7 +466,7 @@ section h2 {
   background: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+border-radius: var(--radius-main);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -532,8 +539,7 @@ footer {
     background-color: var(--accent-color);
     color: #222;
     padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-}
+    border-radius: var(--radius-main);
 
 .sliding-menu {
     position: fixed;
@@ -546,6 +552,7 @@ footer {
     transition: left 0.3s ease;
     padding-top: 4rem;
     z-index: 1000;
+    border-radius: var(--radius-main);
 }
 
 .sliding-menu ul {
@@ -569,7 +576,7 @@ footer {
 .sliding-menu a:hover {
     background-color: var(--primary-color);
     color: white;
-    border-radius: 5px;
+ border-radius: var(--radius-main);
 }
 
 /* Toggle menu */
@@ -696,7 +703,7 @@ footer {
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-main);
   box-shadow: 0 2px 12px var(--shadow-color);
   background: var(--surface-color);
   transition: box-shadow 0.2s, transform 0.2s;
@@ -708,6 +715,7 @@ footer {
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s, filter 0.3s;
+  border-radius: var(--radius-main);
 }
 
 .gallery-item:hover,
@@ -767,7 +775,7 @@ body.dark-theme {
   background-color: #6200ea;
   color: #fff;
   border: none;
-  border-radius: 5px;
+border-radius: var(--radius-main);
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -775,50 +783,4 @@ body.dark-theme {
 .theme-toggle-btn:hover {
   background-color: #3700b3;
 }
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: var(--surface-color, #fff);
-  border-radius: 16px;
-  box-shadow: 0 2px 12px var(--shadow-color, rgba(0,0,0,0.08));
-  padding: 2rem 1.5rem;
-  margin: 2rem auto;
-  max-width: 350px;
-  width: 100%;
-  gap: 1rem;
-}
 
-.card img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.card .typewriter-text,
-.card p {
-  text-align: center;
-  margin: 0.5rem 0 1rem 0;
-}
-
-.card .btn {
-  align-self: center;
-  margin-top: 1rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .card {
-    padding: 1rem 0.5rem;
-    max-width: 98vw;
-  }
-  .card img {
-    max-width: 100%;
-    height: auto;
-  }
-}
