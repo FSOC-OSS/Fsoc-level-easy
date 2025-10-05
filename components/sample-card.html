@@ -28,6 +28,9 @@
       padding: 1rem;
       color: #555;
     }
+    .progress-bar {
+      --value: 100;
+    }
   </style>
 </head>
 <body>
@@ -35,6 +38,19 @@
     <img src="https://picsum.photos/300/150" alt="Random Image">
     <h3>Sample Card</h3>
     <p>This is a sample card component built with HTML & CSS.</p>
+<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" title="Task Completion: 100%">
+  <div class="progress-meta">
+    <span class="progress-title">Task Completion</span>
+    <span class="progress-percent" aria-hidden="true">100%</span>
   </div>
+
+  <div class="progress-track" aria-hidden="true">
+    <div class="progress-fill"></div>
+  </div>
+</div>
+    <div class="progress-fill"></div>
+  </div>
+</div>
+
 </body>
 </html>
