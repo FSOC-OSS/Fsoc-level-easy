@@ -62,3 +62,10 @@
   --color-bg: var(--background-color);
   --color-surface: var(--surface-color);
 }
+.card img{
+  transition: all 0.17s ease-in;
+}
+
+.card img:hover{
+  scale: 1.1;
+}
