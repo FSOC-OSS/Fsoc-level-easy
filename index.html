@@ -6,7 +6,7 @@
   <title>Hacktoberfest CSS Playground</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="Updated CSS style.css">
-  <
+  
 </head>
 <body>
   <nav class="navbar">
@@ -86,5 +86,17 @@
     </div>
     <p style="text-align: center;color:white">Made with ❤️ for Hacktoberfest</p>
   </footer>
+  <button id="theme-toggle" class="theme-toggle-btn">&#127774; / &#127769;</button>
+
+  <script>
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+    const navbar = document.querySelector(".navbar");
+    themeToggleButton.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+      navbar.classList.toggle("dark-theme");
+
+    });
+  </script>
 </body>
 </html>
