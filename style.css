@@ -3,6 +3,56 @@
 html {
   scroll-behavior: smooth;
 }
+<style>
+    /* Default (light theme) */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #a6d0ec;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .card {
+      padding: 1rem;
+      margin: 2rem auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: #f5f5f5;
+    }
+
+    /* Dark theme via system preference */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #29bbc9;
+        color: #eeeeee;
+      }
+      .card {
+        background: #239ccf;
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.582);
+      }
+    }
+
+    /* Dark theme via class toggle */
+    body.dark-theme {
+      background-color: #2cb3bc;
+      color: #eeeeee;
+    }
+    body.dark-theme .card {
+      background: #1a75ae;
+      box-shadow: 0 2px 8px rgba(255,255,255,0.1);
+    }
+
+    /* Toggle button (just for demo) */
+    .theme-toggle {
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+
 
 body {
     font-family: var(--font-sans);
