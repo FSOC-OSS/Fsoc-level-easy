@@ -953,3 +953,80 @@ border-radius: var(--radius-main);
 .theme-toggle-btn:hover {
   background-color: #3700b3;
 }
+
+body {
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.7;
+  background: #fff;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+a {
+  color: #0056b3;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+a:visited {
+  color: #003366;
+}
+
+a:hover, a:focus {
+  color: #ff9800;
+  background: #222;
+  outline: 2px solid #ff9800;
+}
+
+.btn, .theme-toggle-btn {
+  background: #0056b3;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover, .theme-toggle-btn:hover {
+  background: #ff9800;
+  color: #222;
+}
+
+.navbar {
+  background: #222;
+  color: #fff;
+}
+
+.navbar__brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar__link {
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 0.5em 1em;
+}
+
+.navbar__link:focus, .navbar__link:hover {
+  color: #ff9800;
+  background: #333;
+  outline: 2px solid #ff9800;
+}
