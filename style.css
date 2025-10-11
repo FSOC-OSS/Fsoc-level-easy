@@ -546,6 +546,7 @@ body.dark-theme .card {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-size: 1.1rem;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .flip-card-front {
@@ -558,6 +559,30 @@ body.dark-theme .card {
   color: #57ced6;
   transform: rotateY(180deg);
 }
+
+/* Responsive */
+@media (max-width: 490px) {
+.flip-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 1 rem auto;
+  }
+
+  .flip-card-inner {
+    height: auto; 
+    transform-style: preserve-3d; 
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);             
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;       
+    height: auto;
+    backface-visibility: hidden;
+    overflow-wrap: break-word;
+  }
+
+
 
 .theme-toggle {
   margin: 1rem;
