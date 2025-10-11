@@ -122,21 +122,63 @@ h2 {
   }
 }
 
-.glow-btn {
-  padding: 12px 24px;
-  font-size: 16px;
+/* Scoped styles applied only when this class is on the body or a wrapper */
+.centered-glow-button-page {
+  background-color: #ffffff !important;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   color: var(--text-color);
-  background-color: var(--accent-color);
-  border-radius: var(--radius);
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
+  transition: background 0.3s, color 0.3s;
+  flex-direction: column; /* optional */
 }
 
-.glow-btn:hover {
-  box-shadow: 0 0 10px #d5b40b, 0 0 20px #ec5e06, 0 0 30px #e50808;
-  transform: translateY(-2px);
+.centered-glow-button-page .glowing-button-container {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  text-align: center;
 }
+
+.centered-glow-button-page .glowing-button {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2978FF; /* electric blue */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none; /* no glow initially */
+  transition: box-shadow 0.35s ease, transform 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.centered-glow-button-page .glowing-button:hover,
+.centered-glow-button-page .glowing-button:focus {
+  box-shadow:
+    0 0 14px #00fff7,
+    0 0 28px #2a79ff,
+    0 0 42px #5a42ff,
+    0 0 56px #00fff7;
+  transform: translateY(-3px) scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .centered-glow-button-page .glowing-button {
+    max-width: 100%;
+    width: auto;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
 
 /* Contact form styles (kept in main css so components share theme) */
 .contact-wrap {
@@ -375,4 +417,3 @@ textarea::placeholder {
 .grid--dense {
   gap: 12px;
 }
-
