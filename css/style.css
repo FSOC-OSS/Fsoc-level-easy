@@ -23,7 +23,6 @@ h1 {
 .container {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: center;
   align-items: stretch;
   gap: 28px;
@@ -81,7 +80,7 @@ h1 {
     padding-right: 8px;
   }
 }
-/* Scoped list styles for component plans and similar elements */
+
 .different-plan li {
   padding: 8px;
   text-align: left;
@@ -90,7 +89,6 @@ h1 {
   font-weight: 400;
 }
 
-/* Contact info lists should be compact */
 .contact-info ul li {
   padding: 4px 0;
   font-size: 14px;
@@ -103,7 +101,6 @@ h2 {
   font-size: 30px;
 }
 
-/* Centering wrapper */
 .loader-wrapper {
   display: flex;
   justify-content: center;
@@ -112,7 +109,6 @@ h2 {
   background: var(--background-color);
 }
 
-/* Spinner styles */
 .loading-spinner {
   width: 60px;
   height: 60px;
@@ -122,7 +118,6 @@ h2 {
   animation: spin 1s linear infinite;
 }
 
-/* Animation keyframes */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -132,7 +127,6 @@ h2 {
   }
 }
 
-/* Responsive scaling */
 @media (max-width: 600px) {
   .loading-spinner {
     width: 40px;
@@ -157,7 +151,6 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* Contact form styles (kept in main css so components share theme) */
 .contact-wrap {
   max-width: 920px;
   margin: 24px auto;
@@ -286,13 +279,6 @@ textarea::placeholder {
   }
 }
 
-/* --------------------------------------------------------------------------
-   Responsive Grid component
-   - semantic classes: .grid, .grid__item, .card, .card__media, .card__content
-   - columns: 1 (mobile), 2–3 (tablet), 4+ (desktop)
-   - gap/spacing included
-------------------------------------------------------------------------------*/
-
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -307,8 +293,6 @@ textarea::placeholder {
   box-sizing: border-box;
   overflow-x:hidden;
 }
-
-
 
 .card {
   background: var(--surface-color);
@@ -384,7 +368,6 @@ textarea::placeholder {
   transform: translateY(-2px);
 }
 
-/* Breakpoints: adjust number of columns by viewport width */
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0,1fr));
@@ -448,14 +431,12 @@ textarea::placeholder {
   }
 }
 @media (max-width: 689px) {
- 
   body {
     padding: 0 16px;     
     box-sizing: border-box;
     overflow-x: hidden;
   }
 
-  
   .container,
   .grid,
   .contact-wrap {
@@ -468,7 +449,6 @@ textarea::placeholder {
     box-sizing: border-box;
   }
 
-  
   .different-plan,
   .card,
   .hacktoberfest-box {  
@@ -478,14 +458,12 @@ textarea::placeholder {
     box-sizing: border-box;
   }
 
-  
   .card__content,
   .different-plan li {
     padding-left: 12px;
     padding-right: 12px;
     text-align: center;
   }
-
 
   .hacktoberfest-box {
     margin-top: 16px;    
@@ -534,8 +512,313 @@ textarea::placeholder {
   }
 }
 
-/* Utility: compact density */
 .grid--dense {
   gap: 12px;
 }
 
+.form-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.responsive-form {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(98, 0, 234, 0.1);
+    padding: 40px;
+    width: 100%;
+}
+
+.form-title {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #6200ea;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(98, 0, 234, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.form-radio-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: #6200ea;
+}
+
+.form-radio-label {
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+}
+
+.form-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: #6200ea;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.form-button {
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 160px;
+}
+
+.form-button-primary {
+    background: #6200ea;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(98, 0, 234, 0.2);
+}
+
+.form-button-primary:hover {
+    background: #5000c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(98, 0, 234, 0.3);
+}
+
+.form-button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(98, 0, 234, 0.2);
+}
+
+.form-button-secondary {
+    background: #f0f0f0;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-button-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-button-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 767px) {
+    .form-wrapper {
+        padding: 15px;
+    }
+
+    .responsive-form {
+        padding: 24px;
+        border-radius: 8px;
+    }
+
+    .form-title {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    .form-textarea {
+        min-height: 120px;
+    }
+
+    .form-radio-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-checkbox {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .checkbox-text {
+        font-size: 13px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    .form-button {
+        width: 100%;
+        min-width: 100%;
+        padding: 13px 28px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .responsive-form {
+        padding: 32px;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 13px 17px;
+    }
+
+    .form-button {
+        min-width: 180px;
+        padding: 13px 32px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form-wrapper {
+        padding: 40px 20px;
+    }
+
+    .responsive-form {
+        padding: 48px;
+    }
+
+    .form-title {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+
+    .form-subtitle {
+        font-size: 16px;
+        margin-bottom: 36px;
+    }
+
+    .form-group {
+        margin-bottom: 26px;
+    }
+}
