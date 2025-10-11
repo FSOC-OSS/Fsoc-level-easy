@@ -1,179 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hacktoberfest CSS Playground</title>
-  <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="dark.css">
-
-  </head>
-
-  <body >
-    <!-- top bar for palette controls (separate from navbar) -->
-    <div class="topbar">
-      <div class="palette-controls" aria-hidden="false">
-        <button class="palette-btn" data-palette="palette-ocean">Ocean</button>
-        <button class="palette-btn" data-palette="palette-forest">Forest</button>
-        <button class="palette-btn" data-palette="palette-lavender">Lavender</button>
-        <button class="palette-btn" data-palette="palette-sunset">Sunset</button>
-        <button class="palette-btn" data-palette="palette-dark">Dark</button>
-      </div>
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">🌞 / 🌙</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacktoberfest CSS Playground</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="palette-controls" aria-hidden="false">
+      <button class="palette-btn" data-palette="palette-ocean">Ocean</button>
+      <button class="palette-btn" data-palette="palette-forest">Forest</button>
+      <button class="palette-btn" data-palette="palette-lavender">Lavender</button>
+      <button class="palette-btn" data-palette="palette-sunset">Sunset</button>
+      <button class="palette-btn" data-palette="palette-dark">Dark</button>
     </div>
-
-    <nav class="navbar">
-      <div class="mysite">APS_X</div>
-      <input type="checkbox" id="nav_toggle" class="nav_toggle" />
-      <label for="nav_toggle" class="nav_icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <ul class="nav_links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="components/form.html">Contact</a></li>
-        <li><a href="components/gallery.html">Gallery</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-    <header class="fade-in">
-      <h1 class="fade-in">🎉 Hacktoberfest CSS Playground 🎉</h1>
-      <p class="typewriter-text">
-        Explore awesome components built with HTML & CSS!
-      </p>
-    </header>
-    <main class="fade-in">
-      <section class="fade-in">
-        <h2 class="fade-in">Sample Component</h2>
-        <iframe src="components/sample-card.html" frameborder="0"></iframe>
-      </section>
-      <section class="price-table fade-in">
-        <iframe src="components/pricing.html" frameborder="0"></iframe>
-      </section>
-      
-  <button class="theme-toggle" onclick="document.body.classList.toggle('dark-theme')">
-    Toggle Theme
-  </button>
-
-  <div class="card">
-    <h2>Hacktoberfest</h2>
-    <p>This card looks good in both light and dark themes.</p>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">🌞 / 🌙</button>
   </div>
 
-      <div class="btn_container">
-        <a href="#modal"><button class="btn fade-in">APS_X</button></a>
-      </div>
-      <div class="modalBox fade-in" id="modal">
-        <p class="modalTitle fade-in">Sample Modal Popup</p>
-        <p class="modalContent fade-in">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nostrum
-          quo cum?
-        </p>
-        <hr />
-        <p class="modalClose"><a href="#">Close</a></p>
-      </div>
-      <section>
-        <h2 class="fade-in">Sample Component</h2>
-        <iframe src="components/sample-card.html" frameborder="0"></iframe>
-      </section>
+  <nav class="navbar">
+    <div class="mysite">APS_X</div>
+    <input type="checkbox" id="nav_toggle" class="nav_toggle">
+    <label for="nav_toggle" class="nav_icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="nav_links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="components/form.html">Contact</a></li>
+      <li><a href="components/gallery.html">Gallery</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
 
-                          
-     
-      <!-- Typewriter effect for paragraph -->
-      <section class="card typewriter-card">
-        <p class="typewriter-text fade-in">
-          Welcome to FSoC! This was the issue assigned to me, thank you!.
-        </p>
-      </section>
-      <!-- Flip Card Component -->
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <h3>Hacktoberfest</h3>
-      <p>A month long open source contribution</p>
-     
+  <header class="fade-in">
+    <h1 class="fade-in">🎉 Hacktoberfest CSS Playground 🎉</h1>
+    <p class="typewriter-text">Explore awesome components built with HTML & CSS!</p>
+  </header>
+
+  <main class="fade-in">
+    <section class="fade-in">
+      <h2 class="fade-in">Sample Component</h2>
+      <iframe src="components/sample-card.html" frameborder="0"></iframe>
+    </section>
+
+    <section>
+      <h2>Form Component</h2>
+      <iframe src="components/form.html" frameborder="0" style="height: 700px;"></iframe>
+    </section>
+
+    <section class="price-table fade-in">
+      <iframe src="components/pricing.html" frameborder="0"></iframe>
+    </section>
+
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark-theme')">Toggle Theme</button>
+
+    <div class="card">
+      <h2>Hacktoberfest</h2>
+      <p>This card looks good in both light and dark themes.</p>
     </div>
-    <div class="flip-card-back">
-      <h3>Do Participate</h3>
-      <p>Let's build the future of open source together</p>
+
+    <div class="btn_container">
+      <a href="#modal"><button class="btn fade-in">CLICK-ME</button></a>
     </div>
-  </div>
-</div>
+    <div class="modalBox fade-in" id="modal">
+      <p class="modalTitle fade-in">Sample Modal Popup</p>
+      <p class="modalContent fade-in">Keep contributing!!!</p>
+      <hr>
+      <p class="modalClose"><a href="#">Close</a></p>
+    </div>
 
-      <div class="btn_container">
-        <button class="btn fade-in">APS_X</button>
-      </div>
-    </main>
-   
-    <footer>
-      <div class="footerInner">
-        <div class="footerTop">
-          <p class="linkToFest">
-            Register at <span class="mainLink"><a href="https://hacktoberfest.com/">Hacktoberfest</a></span> Now!
-          </p>
+    <section class="card typewriter-card">
+      <p class="typewriter-text fade-in">Welcome to FSoC! This was the issue assigned to me, thank you!.</p>
+    </section>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Hacktoberfest</h3>
+          <p>A month long open source contribution</p>
         </div>
-
-        <div class="footerMiddle">
-          <div class="linkToSocials">
-            <p>Link to Socials</p>
-            <ul>
-              <li>
-                <img src="" alt="github" /><a target="_blank" href="https://github.com/">Github</a>
-              </li>
-              <li>
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/df/7c/7fdf7c64-d78d-33ca-707f-e2147e91e498/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/1200x630wa.png" alt="instagram" /><a target="_blank" href="https://instagram.com/">Instagram</a>
-              </li>
-              <li>
-                <img src="https://img.freepik.com/premium-vector/linkedin-logo-icon_1273375-1174.jpg" alt="linkedin" /><a target="_blank" href="https://linkedin.com/">Linked In</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="contactUs">
-            <p>Contact Us</p>
-            <ul>
-              <li>Phone: 1212344556</li>
-              <li>Email: <a href="mailto:sample@example.com">sample@example.com</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footerBottom">
-          <p>Made with ❤️ for Hacktoberfest</p>
+        <div class="flip-card-back">
+          <h3>Do Participate</h3>
+          <p>Let's build the future of open source together</p>
         </div>
       </div>
-    </footer>
-    <!-- theme toggle inside the topbar for alignment with palette controls -->
-    <!-- the button is added into the DOM near the topbar; fallback here for non-JS environments -->
+    </div>
 
-    <script>
-      const themeToggleButton = document.getElementById("theme-toggle");
-      const body = document.body;
-      const navbar = document.querySelector(".navbar");
-      themeToggleButton.addEventListener("click", () => {
-        body.classList.toggle("dark-theme");
-        navbar.classList.toggle("dark-theme");
-      });
-    </script>
-    <script>
-      // Palette buttons: make selection exclusive and show active state
-      (function(){
-        const paletteButtons = document.querySelectorAll('.palette-btn');
-        const paletteNames = ['palette-ocean','palette-forest','palette-lavender','palette-sunset','palette-dark'];
-        function clearPalettes(){ paletteNames.forEach(p=>document.body.classList.remove(p)); }
-        paletteButtons.forEach(btn=>{
-          btn.addEventListener('click', ()=>{
-            const p = btn.dataset.palette;
-            clearPalettes();
-            if(p) document.body.classList.add(p);
-            paletteButtons.forEach(b=>b.classList.toggle('active', b===btn));
-          });
+    <div class="btn_container">
+      <button class="btn fade-in">APS_X</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footerInner">
+      <div class="footerTop">
+        <p class="linkToFest">Register at <span class="mainLink"><a href="https://hacktoberfest.com/">Hacktoberfest</a></span> Now!</p>
+      </div>
+
+      <div class="footerMiddle">
+        <div class="linkToSocials">
+          <p>Link to Socials</p>
+          <ul>
+            <li><img src="" alt="github" height="15px" width="15px"><a target="_blank" href="https://github.com/">Github</a></li>
+            <li><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/df/7c/7fdf7c64-d78d-33ca-707f-e2147e91e498/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/1200x630wa.png" height="15px" width="15px" alt="instagram"><a target="_blank" href="https://instagram.com/">Instagram</a></li>
+            <li><img src="https://img.freepik.com/premium-vector/linkedin-logo-icon_1273375-1174.jpg" height="15px" width="15px" alt="linkedin"><a target="_blank" href="https://linkedin.com/">Linked In</a></li>
+          </ul>
+        </div>
+
+        <div class="contactUs">
+          <p>Contact Us</p>
+          <ul>
+            <li>PhoneNo: 1212344556</li>
+            <li><img src="" alt=""><span>Email: </span><a href="mailto:sample@example.com">Sample@example.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footerBottom">
+        <p style="text-align: center; color: white">Made with ❤️ for Hacktoberfest</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+    const navbar = document.querySelector(".navbar");
+    themeToggleButton.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+      navbar.classList.toggle("dark-theme");
+    });
+  </script>
+  <script>
+    (function(){
+      const paletteButtons = document.querySelectorAll('.palette-btn');
+      const paletteNames = ['palette-ocean','palette-forest','palette-lavender','palette-sunset','palette-dark'];
+      function clearPalettes(){ paletteNames.forEach(p=>document.body.classList.remove(p)); }
+      paletteButtons.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const p = btn.dataset.palette;
+          clearPalettes();
+          if(p) document.body.classList.add(p);
+          paletteButtons.forEach(b=>b.classList.toggle('active', b===btn));
         });
-      })();
-    </script>
-    
-  </body>
+      });
+    })();
+  </script>
+</body>
 </html>
