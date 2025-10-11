@@ -1,0 +1,73 @@
+/* Theme variables */
+:root {
+  /* Brand colors */
+  --primary-color: #6200ea;
+  --primary-contrast: #ffffff;
+
+  --secondary-color: #03dac6;
+  --secondary-dark: #018786;
+  --secondary-darker: #02675b;
+
+  --accent-color: #007bff;
+  --accent-dark: #0056b3;
+
+  /* Semantic colors */
+  --success-color: #4caf50;
+  --warning-color: #f39c12;
+  --danger-color: #e53935;
+
+  /* Neutrals */
+  --text-color: #333333;
+  --text-muted: #555555;
+  --heading-color: #2c3e50;
+
+  --background-color: #f5f7fa;
+  --surface-color: #ffffff;
+  --surface-2-color: #f8f9fa;
+  --border-color: #cccccc;
+
+  --nav-bg-color: #ffffff;
+  --footer-bg-color: #222222;
+
+  /* Effects */
+  --shadow-color: rgba(98, 0, 234, 0.08);
+
+  /* Fonts */
+  --font-sans: "Source Sans Pro", Arial, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-ui: Arial, Helvetica, sans-serif;
+  --font-accent: "Poppins", sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 50px;
+  /* Canonical radius used across the project */
+  --radius-main: var(--radius-xl);
+}
+
+/* Aliases to match existing variable names */
+:root {
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-text: var(--text-color);
+  --color-bg: var(--background-color);
+  --color-surface: var(--surface-color);
+}
+.card img{
+  transition: all 0.17s ease-in;
+}
+
+.card img:hover{
+  scale: 1.1;
+}

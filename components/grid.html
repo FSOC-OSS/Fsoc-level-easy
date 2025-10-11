@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Grid</title>
+  <!-- Use project variables and main stylesheet -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Small helper to constrain the demo page */
+    body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    .page {
+      max-width: 1400px;
+      margin: 28px auto;
+      padding: 0 12px;
+    }
+    .page h1 { text-align: left; font-size: 28px; margin-bottom: 12px; }
+    /* Make images consistent height for demo */
+    .card__media img { height: 160px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <main class="page">
+  <h1>FSoC — Level: Easy</h1>
+
+    <section class="grid" aria-label="Demo grid of cards">
+      <!-- Example items -->
+      <article class="grid__item card">
+        <div class="card__media">
+          <img src="https://picsum.photos/600/400?random=1" alt="Random image 1">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Getting started</h2>
+          <p class="card__desc">Intro to FSoC and how to set up the project locally.</p>
+        </div>
+        <div class="card__footer">
+          <a class="card__action" href="#">Open</a>
+        </div>
+      </article>
+
+      <article class="grid__item card">
+        <div class="card__media">
+          <img src="https://picsum.photos/600/400?random=2" alt="Random image 2">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Level challenges</h2>
+          <p class="card__desc">Small tasks designed for beginners to learn core concepts.</p>
+        </div>
+        <div class="card__footer">
+          <a class="card__action" href="#">Explore</a>
+        </div>
+      </article>
+
+      <article class="grid__item card">
+        <div class="card__media">
+          <img src="https://picsum.photos/600/400?random=3" alt="Random image 3">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Components</h2>
+          <p class="card__desc">Reusable HTML & CSS components used across the FSoC site.</p>
+        </div>
+        <div class="card__footer">
+          <a class="card__action" href="#">Read</a>
+        </div>
+      </article>
+
+      <article class="grid__item card">
+        <div class="card__media">
+          <img src="https://picsum.photos/600/400?random=4" alt="Random image 4">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Documentation</h2>
+          <p class="card__desc">Guides and notes about project structure and coding standards.</p>
+        </div>
+        <div class="card__footer">
+          <a class="card__action" href="#">Open</a>
+        </div>
+      </article>
+
+      <!-- Add a couple more to show density -->
+      <article class="grid__item card">
+        <div class="card__media">
+          <img src="https://picsum.photos/600/400?random=5" alt="Random image 5">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Contribute</h2>
+          <p class="card__desc">How to submit PRs, report issues, and join the community.</p>
+        </div>
+        <div class="card__footer">
+          <a class="card__action" href="#">Contribute</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
