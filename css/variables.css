@@ -52,6 +52,8 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-pill: 50px;
+  /* Canonical radius used across the project */
+  --radius-main: var(--radius-xl);
 }
 
 /* Aliases to match existing variable names */
