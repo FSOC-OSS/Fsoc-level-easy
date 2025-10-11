@@ -661,6 +661,7 @@ border-radius: var(--radius-main);
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-size: 1.1rem;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .flip-card-front {
@@ -675,16 +676,28 @@ border-radius: var(--radius-main);
 }
 
 /* Responsive */
-@media (max-width: 500px) {
-  .flip-card {
-    width: 98vw;
-    height: 160px;
+@media (max-width: 490px) {
+.flip-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 1 rem auto;
   }
+
+  .flip-card-inner {
+    height: auto; 
+    transform-style: preserve-3d; 
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);             
+  }
+
   .flip-card-front,
   .flip-card-back {
-    font-size: 1rem;
-    padding: 1rem;
+    position: absolute;       
+    height: auto;
+    backface-visibility: hidden;
+    overflow-wrap: break-word;
   }
+
+
 }
 
 footer {
