@@ -2,5 +2,5 @@
 
 Thanks goes to these amazing people:
 
-- [Your Name](https://github.com/yourusername)
+- [Ipsit Debnath](https://github.com/ipsitdebnath)
 - [Next Contributor](https://github.com/username)

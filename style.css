@@ -1372,4 +1372,8 @@ footer a:hover {
   .form-textarea {
     font-size: 0.875rem;
   }
+}}
+h1:hover{
+color: #ffffff;
+cursor: pointer;
 }
