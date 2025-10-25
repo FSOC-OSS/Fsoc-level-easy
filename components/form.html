@@ -3,30 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Component</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Modern Contact Form - CSS Playground</title>
+  <meta name="description" content="A modern, accessible contact form component with validation and smooth animations.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/variables.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family-sans);
+      background: var(--background-color);
+      color: var(--text-primary);
+      padding: var(--space-8);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      background: var(--surface-color);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-xl);
+      padding: var(--space-10);
+      border: 1px solid var(--border-light);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: var(--space-10);
+    }
+
+    .form-header h2 {
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--heading-color);
+      margin-bottom: var(--space-3);
+      font-family: var(--font-family-serif);
+    }
+
+    .form-header p {
+      color: var(--text-secondary);
+      font-size: var(--font-size-lg);
+      margin: 0;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-6);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .form-label {
+      display: block;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wide);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: var(--space-4);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-sans);
+      transition: all var(--transition-base);
+      background: var(--surface-color);
+      color: var(--text-primary);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 4px var(--primary-color)20;
+      transform: translateY(-2px);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-radio-group,
+    .form-checkbox-group {
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .form-radio-item,
+    .form-checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .form-radio-input,
+    .form-checkbox-input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary-color);
+    }
+
+    .form-radio-label,
+    .form-checkbox-label {
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-weight: var(--font-weight-medium);
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: var(--space-4) var(--space-8);
+      background: var(--primary-color);
+      color: var(--text-on-primary);
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wide);
+      margin-top: var(--space-4);
+    }
+
+    .form-submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-submit-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--primary-color)30;
+    }
+
+    .form-submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .success-message {
+      display: none;
+      padding: var(--space-4);
+      background: var(--success-100);
+      color: var(--success-700);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-6);
+      text-align: center;
+      font-weight: var(--font-weight-medium);
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: var(--space-4);
+      }
+
+      .form-container {
+        padding: var(--space-6);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-0);
+      }
+
+      .form-radio-group,
+      .form-checkbox-group {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+    }
+
+    /* Dark theme adjustments */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: var(--gray-900);
+      }
+
+      .form-container {
+        background: var(--gray-800);
+        border-color: var(--gray-700);
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-select {
+        background: var(--gray-800);
+        border-color: var(--gray-600);
+        color: var(--gray-100);
+      }
+
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: var(--gray-400);
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="form-container">
     <div class="form-header">
-      <h2>Contact Form</h2>
-      <p>Fill out the form below</p>
+      <h2>Get In Touch</h2>
+      <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
     </div>
 
-    <form action="#" method="POST">
-      <div class="form-group">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name">
+    <div class="success-message" id="successMessage">
+      <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+    </div>
+
+    <form action="#" method="POST" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName" class="form-label">First Name</label>
+          <input 
+            type="text" 
+            id="firstName" 
+            name="firstName" 
+            class="form-input" 
+            placeholder="Enter your first name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input 
+            type="text" 
+            id="lastName" 
+            name="lastName" 
+            class="form-input" 
+            placeholder="Enter your last name"
+            required
+          >
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
+        <label for="email" class="form-label">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="form-input" 
+          placeholder="your.email@example.com"
+          required
+        >
       </div>
 
-      <div class="form-group">
-        <label for="phone" class="form-label">Phone</label>
-        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 12345 67890">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            class="form-input" 
+            placeholder="+1 (555) 123-4567"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="company" class="form-label">Company</label>
+          <input 
+            type="text" 
+            id="company" 
+            name="company" 
+            class="form-input" 
+            placeholder="Your company name"
+          >
+        </div>
       </div>
 
       <div class="form-group">
@@ -40,39 +334,124 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">Gender</label>
+        <label for="subject" class="form-label">Subject</label>
+        <select id="subject" name="subject" class="form-select" required>
+          <option value="">Select a subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Technical Support</option>
+          <option value="contribution">Contributing to Project</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">How did you hear about us?</label>
         <div class="form-radio-group">
           <div class="form-radio-item">
-            <input type="radio" id="male" name="gender" value="male" class="form-radio-input">
-            <label for="male" class="form-radio-label">Male</label>
+            <input type="radio" id="github" name="source" value="github" class="form-radio-input">
+            <label for="github" class="form-radio-label">GitHub</label>
           </div>
           <div class="form-radio-item">
-            <input type="radio" id="female" name="gender" value="female" class="form-radio-input">
-            <label for="female" class="form-radio-label">Female</label>
+            <input type="radio" id="hacktoberfest" name="source" value="hacktoberfest" class="form-radio-input">
+            <label for="hacktoberfest" class="form-radio-label">Hacktoberfest</label>
           </div>
           <div class="form-radio-item">
-            <input type="radio" id="other" name="gender" value="other" class="form-radio-input">
-            <label for="other" class="form-radio-label">Other</label>
+            <input type="radio" id="social" name="source" value="social" class="form-radio-input">
+            <label for="social" class="form-radio-label">Social Media</label>
+          </div>
+          <div class="form-radio-item">
+            <input type="radio" id="friend" name="source" value="friend" class="form-radio-input">
+            <label for="friend" class="form-radio-label">Friend</label>
           </div>
         </div>
       </div>
 
       <div class="form-group">
         <label for="message" class="form-label">Message</label>
-        <textarea id="message" name="message" class="form-textarea" placeholder="Write your message"></textarea>
+        <textarea 
+          id="message" 
+          name="message" 
+          class="form-textarea" 
+          placeholder="Tell us about your inquiry, feedback, or how you'd like to contribute..."
+          required
+        ></textarea>
       </div>
 
       <div class="form-group">
         <div class="form-checkbox-group">
           <div class="form-checkbox-item">
             <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox-input">
-            <label for="newsletter" class="form-checkbox-label">Subscribe to newsletter</label>
+            <label for="newsletter" class="form-checkbox-label">
+              Subscribe to our newsletter for component updates and Hacktoberfest news
+            </label>
+          </div>
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="privacy" name="privacy" class="form-checkbox-input" required>
+            <label for="privacy" class="form-checkbox-label">
+              I agree to the <a href="#" style="color: var(--primary-color); text-decoration: underline;">Privacy Policy</a> and Terms of Service
+            </label>
           </div>
         </div>
       </div>
 
-      <button type="submit" class="form-submit-btn">Submit</button>
+      <button type="submit" class="form-submit-btn">
+        Send Message
+      </button>
     </form>
   </div>
+
+  <script>
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simple form validation
+      const requiredFields = this.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.style.borderColor = 'var(--error-500)';
+          field.addEventListener('input', function() {
+            this.style.borderColor = 'var(--border-color)';
+          }, { once: true });
+        }
+      });
+      
+      if (isValid) {
+        // Show success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.add('show');
+        
+        // Reset form
+        this.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 5000);
+        
+        // Scroll to top
+        document.querySelector('.form-container').scrollIntoView({ 
+          behavior: 'smooth' 
+        });
+      }
+    });
+
+    // Enhanced form interactions
+    const inputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+    
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.style.transform = 'scale(1.02)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>
