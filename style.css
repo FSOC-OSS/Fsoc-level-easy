@@ -170,7 +170,7 @@ a:hover, a:focus {
   border: none;
   padding: 6px 10px;
   font-size: 0.9rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   color: #fff;
   background: rgba(255,255,255,0.08);
@@ -295,7 +295,7 @@ a:hover, a:focus {
   height: 4px;
   width: 100%;
   background: var(--primary-color);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   transition: 0.3s;
 }
 
@@ -582,13 +582,13 @@ body.dark-theme .card {
     overflow-wrap: break-word;
   }
 
-
+}
 
 .theme-toggle {
   margin: 1rem;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
   cursor: pointer;
 }
 
@@ -886,7 +886,7 @@ footer a:hover {
 
 .form-container {
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--radius-2xl);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   padding: 2.5rem;
   width: 100%;
@@ -930,7 +930,7 @@ footer a:hover {
   width: 100%;
   padding: 0.875rem 1rem;
   border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   font-size: 1rem;
   font-family: "Source Sans Pro", Arial, sans-serif;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -987,7 +987,7 @@ footer a:hover {
   background: linear-gradient(135deg, #6200ea, #764ba2);
   color: #fff;
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -1317,7 +1317,7 @@ footer a:hover {
   }
   .form-container {
     padding: 1.5rem 1rem;
-    border-radius: 12px;
+    border-radius: var(--radius-main);
     margin: 1rem auto;
   }
   .form-header h2 {
