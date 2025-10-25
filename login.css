@@ -39,7 +39,7 @@ body {
     height: 450px;
     background: transparent;
     border: 2px solid black;
-    border-radius: 20px;
+    border-radius: var(--radius-3xl);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +121,7 @@ button {
     background: var(--primary-color);
     border: none;
     outline: none;
-    border-radius: 40px;
+    border-radius: var(--radius-pill);
     cursor: pointer;
     font-size: 1em;
     color: var(--primary-contrast);

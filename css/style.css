@@ -34,7 +34,7 @@ h1 {
 .different-plan {
   flex: 1 1 250px;
   background-color: var(--surface-2-color);
-  border-radius: 12px;
+  border-radius: var(--radius-main);
   padding: 35px;
   max-width: 300px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

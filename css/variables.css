@@ -172,6 +172,12 @@
   --radius-3xl: 1.5rem;      /* 24px */
   --radius-full: 9999px;
 
+  /* === BORDER RADIUS ALIASES === */
+  /* Standard radius for most components */
+  --radius: var(--radius-lg);        /* 8px - default for cards, buttons */
+  --radius-main: var(--radius-xl);   /* 12px - main components like cards */
+  --radius-pill: var(--radius-full); /* 9999px - pill shaped buttons */
+
   /* === BREAKPOINTS === */
   --screen-sm: 640px;
   --screen-md: 768px;
