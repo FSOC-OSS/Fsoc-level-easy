@@ -133,6 +133,30 @@
       width: 18px;
       height: 18px;
       accent-color: var(--primary-color);
+      flex-shrink: 0; /* Prevent shrinking on mobile */
+    }
+
+    /* Enhanced touch targets for mobile */
+    @media (max-width: 768px) {
+      .form-radio-input,
+      .form-checkbox-input {
+        width: 20px;
+        height: 20px;
+        margin-right: var(--space-1);
+      }
+
+      .form-radio-item,
+      .form-checkbox-item {
+        min-height: 44px; /* iOS minimum touch target */
+        align-items: flex-start;
+        padding: var(--space-2) 0;
+      }
+
+      .form-radio-label,
+      .form-checkbox-label {
+        line-height: 1.4;
+        margin-top: 2px; /* Align with checkbox/radio */
+      }
     }
 
     .form-radio-label,
@@ -190,6 +214,25 @@
       animation: slideIn 0.3s ease-out;
     }
 
+    /* Error state styles for better UX */
+    .form-input.error,
+    .form-textarea.error,
+    .form-select.error {
+      border-color: var(--error-500);
+      box-shadow: 0 0 0 3px var(--error-500)20;
+    }
+
+    .error-message {
+      color: var(--error-500);
+      font-size: var(--font-size-sm);
+      margin-top: var(--space-1);
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
     @keyframes slideIn {
       from {
         opacity: 0;
@@ -201,14 +244,56 @@
       }
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    /* Improved form spacing on very small screens */
+    @media (max-width: 360px) {
+      .form-container {
+        padding: var(--space-3);
+        margin: var(--space-1);
+      }
+
+      .form-header h2 {
+        font-size: var(--font-size-xl);
+        line-height: 1.2;
+      }
+
+      .form-header p {
+        font-size: var(--font-size-sm);
+        line-height: 1.3;
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-select {
+        padding: var(--space-2-5);
+        font-size: var(--font-size-sm);
+      }
+
+      .form-label {
+        font-size: 10px;
+        margin-bottom: var(--space-1);
+      }
+    }
+
+    /* Responsive Design - Mobile First */
+    
+    /* Mobile devices (up to 480px) */
+    @media (max-width: 480px) {
       body {
-        padding: var(--space-4);
+        padding: var(--space-2);
       }
 
       .form-container {
-        padding: var(--space-6);
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+      }
+
+      .form-header h2 {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--space-2);
+      }
+
+      .form-header p {
+        font-size: var(--font-size-base);
       }
 
       .form-row {
@@ -216,10 +301,100 @@
         gap: var(--space-0);
       }
 
+      .form-group {
+        margin-bottom: var(--space-4);
+      }
+
+      .form-label {
+        font-size: var(--font-size-xs);
+        margin-bottom: var(--space-1-5);
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-select {
+        padding: var(--space-3);
+        font-size: var(--font-size-sm);
+      }
+
+      .form-submit-btn {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--font-size-base);
+      }
+
       .form-radio-group,
       .form-checkbox-group {
         flex-direction: column;
-        gap: var(--space-3);
+        gap: var(--space-2);
+      }
+
+      .form-radio-label,
+      .form-checkbox-label {
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    /* Tablet devices (481px to 768px) */
+    @media (min-width: 481px) and (max-width: 768px) {
+      body {
+        padding: var(--space-4);
+      }
+
+      .form-container {
+        padding: var(--space-6);
+        max-width: 90%;
+      }
+
+      .form-header h2 {
+        font-size: var(--font-size-3xl);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+      }
+
+      .form-radio-group,
+      .form-checkbox-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+    }
+
+    /* Large tablets and small desktops (769px to 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .form-container {
+        max-width: 700px;
+        padding: var(--space-8);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+      }
+    }
+
+    /* Large desktops (1025px and up) */
+    @media (min-width: 1025px) {
+      .form-container {
+        max-width: 800px;
+        padding: var(--space-12);
+      }
+
+      .form-header h2 {
+        font-size: var(--font-size-4xl);
+      }
+
+      .form-input,
+      .form-textarea,
+      .form-select {
+        padding: var(--space-5);
+      }
+
+      .form-submit-btn {
+        padding: var(--space-5) var(--space-10);
+        font-size: var(--font-size-xl);
       }
     }
 
@@ -325,16 +500,6 @@
 
       <div class="form-group">
         <label for="subject" class="form-label">Subject</label>
-        <select id="subject" name="subject" class="form-select">
-          <option value="">Select subject</option>
-          <option value="general">General Inquiry</option>
-          <option value="support">Technical Support</option>
-          <option value="feedback">Feedback</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="subject" class="form-label">Subject</label>
         <select id="subject" name="subject" class="form-select" required>
           <option value="">Select a subject</option>
           <option value="general">General Inquiry</option>
@@ -402,20 +567,55 @@
   </div>
 
   <script>
-    // Form submission handling
+    // Enhanced form submission handling with better validation
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Simple form validation
+      // Clear previous errors
+      const errorMessages = document.querySelectorAll('.error-message');
+      errorMessages.forEach(msg => {
+        msg.classList.remove('show');
+      });
+      
+      const allInputs = this.querySelectorAll('.form-input, .form-textarea, .form-select');
+      allInputs.forEach(input => {
+        input.classList.remove('error');
+      });
+      
+      // Enhanced form validation
       const requiredFields = this.querySelectorAll('[required]');
       let isValid = true;
       
       requiredFields.forEach(field => {
+        const fieldGroup = field.closest('.form-group');
+        let errorMsg = fieldGroup.querySelector('.error-message');
+        
+        if (!errorMsg) {
+          errorMsg = document.createElement('div');
+          errorMsg.className = 'error-message';
+          fieldGroup.appendChild(errorMsg);
+        }
+        
         if (!field.value.trim()) {
           isValid = false;
-          field.style.borderColor = 'var(--error-500)';
+          field.classList.add('error');
+          errorMsg.textContent = `${field.previousElementSibling.textContent} is required`;
+          errorMsg.classList.add('show');
+          
+          // Remove error on input
           field.addEventListener('input', function() {
-            this.style.borderColor = 'var(--border-color)';
+            this.classList.remove('error');
+            errorMsg.classList.remove('show');
+          }, { once: true });
+        } else if (field.type === 'email' && !isValidEmail(field.value)) {
+          isValid = false;
+          field.classList.add('error');
+          errorMsg.textContent = 'Please enter a valid email address';
+          errorMsg.classList.add('show');
+          
+          field.addEventListener('input', function() {
+            this.classList.remove('error');
+            errorMsg.classList.remove('show');
           }, { once: true });
         }
       });
@@ -433,25 +633,81 @@
           successMessage.classList.remove('show');
         }, 5000);
         
-        // Scroll to top
+        // Scroll to top (responsive-aware)
+        const isMobile = window.innerWidth <= 768;
         document.querySelector('.form-container').scrollIntoView({ 
-          behavior: 'smooth' 
+          behavior: 'smooth',
+          block: isMobile ? 'start' : 'center'
         });
+      } else {
+        // On mobile, scroll to first error
+        if (window.innerWidth <= 768) {
+          const firstError = document.querySelector('.form-input.error, .form-textarea.error, .form-select.error');
+          if (firstError) {
+            firstError.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'center'
+            });
+          }
+        }
       }
     });
+    
+    // Email validation helper
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
-    // Enhanced form interactions
+    // Enhanced form interactions (responsive-aware)
     const inputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+    const isMobile = () => window.innerWidth <= 768;
     
     inputs.forEach(input => {
       input.addEventListener('focus', function() {
-        this.parentElement.style.transform = 'scale(1.02)';
+        // Reduce animations on mobile for better performance
+        if (!isMobile()) {
+          this.parentElement.style.transform = 'scale(1.02)';
+          this.parentElement.style.transition = 'transform 0.2s ease';
+        }
       });
       
       input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'scale(1)';
+        if (!isMobile()) {
+          this.parentElement.style.transform = 'scale(1)';
+        }
       });
+      
+      // Add touch feedback for mobile
+      if (isMobile()) {
+        input.addEventListener('touchstart', function() {
+          this.style.backgroundColor = 'var(--surface-variant)';
+        });
+        
+        input.addEventListener('touchend', function() {
+          setTimeout(() => {
+            this.style.backgroundColor = 'var(--surface-color)';
+          }, 150);
+        });
+      }
     });
+    
+    // Prevent zoom on input focus for iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      const viewport = document.querySelector('meta[name=viewport]');
+      viewport.setAttribute('content', viewport.content + ', user-scalable=no');
+      
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          if (parseFloat(getComputedStyle(this).fontSize) < 16) {
+            this.style.fontSize = '16px';
+          }
+        });
+        
+        input.addEventListener('blur', function() {
+          this.style.fontSize = '';
+        });
+      });
+    }
   </script>
 </body>
 </html>
