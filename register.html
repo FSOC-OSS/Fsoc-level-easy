@@ -1,479 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - Hacktoberfest CSS Playground</title>
-    <meta name="description" content="Create your account and join the Hacktoberfest CSS Playground community.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="modern-style.css">
-    
-    <!-- Additional styles for auth pages -->
-    <style>
-        /* Auth Page Specific Styles */
-        .auth-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--secondary-color)20 0%, var(--primary-color)10 100%);
-            padding: var(--space-4);
-        }
-
-        .auth-container {
-            width: 100%;
-            max-width: 450px;
-            background: var(--surface-color);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-2xl);
-            padding: var(--space-8);
-            border: 1px solid var(--border-light);
-        }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: var(--space-8);
-        }
-
-        .auth-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-bottom: var(--space-4);
-        }
-
-        .auth-title {
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--heading-color);
-            margin-bottom: var(--space-2);
-        }
-
-        .auth-subtitle {
-            color: var(--text-secondary);
-            font-size: var(--font-size-base);
-            margin: 0;
-        }
-
-        .form-group {
-            margin-bottom: var(--space-5);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-4);
-        }
-
-        .form-label {
-            display: block;
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-medium);
-            color: var(--text-primary);
-            margin-bottom: var(--space-2);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: var(--space-3) var(--space-4);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-base);
-            transition: all var(--transition-base);
-            background: var(--surface-color);
-            color: var(--text-primary);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--primary-color)20;
-        }
-
-        .form-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .input-with-icon {
-            position: relative;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: var(--space-3);
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: var(--font-size-lg);
-            transition: color var(--transition-fast);
-        }
-
-        .input-with-icon .form-input {
-            padding-left: var(--space-10);
-        }
-
-        .form-input:focus + .input-icon,
-        .input-with-icon:focus-within .input-icon {
-            color: var(--primary-color);
-        }
-
-        .password-strength {
-            margin-top: var(--space-2);
-            font-size: var(--font-size-xs);
-        }
-
-        .strength-indicator {
-            display: flex;
-            gap: var(--space-1);
-            margin-bottom: var(--space-2);
-        }
-
-        .strength-bar {
-            height: 3px;
-            border-radius: var(--radius-full);
-            background: var(--border-color);
-            flex: 1;
-            transition: background-color var(--transition-fast);
-        }
-
-        .strength-bar.weak { background: var(--error-500); }
-        .strength-bar.medium { background: var(--warning-500); }
-        .strength-bar.strong { background: var(--success-500); }
-
-        .strength-text {
-            color: var(--text-muted);
-        }
-
-        .form-terms {
-            margin-bottom: var(--space-6);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-3);
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            margin-top: 2px;
-            accent-color: var(--primary-color);
-        }
-
-        .checkbox-group label {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            line-height: var(--line-height-normal);
-        }
-
-        .checkbox-group a {
-            color: var(--primary-color);
-            font-weight: var(--font-weight-medium);
-        }
-
-        .auth-button {
-            width: 100%;
-            padding: var(--space-4);
-            background: var(--primary-color);
-            color: var(--text-on-primary);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-base);
-            font-weight: var(--font-weight-semibold);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            margin-bottom: var(--space-6);
-        }
-
-        .auth-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .auth-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px var(--primary-color)30;
-        }
-
-        .auth-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .auth-footer {
-            text-align: center;
-            padding-top: var(--space-6);
-            border-top: 1px solid var(--border-light);
-        }
-
-        .auth-footer p {
-            margin: 0;
-            color: var(--text-secondary);
-            font-size: var(--font-size-sm);
-        }
-
-        .auth-footer a {
-            color: var(--primary-color);
-            font-weight: var(--font-weight-semibold);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-
-        .auth-footer a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-medium);
-            margin-bottom: var(--space-4);
-            transition: color var(--transition-fast);
-        }
-
-        .back-to-home:hover {
-            color: var(--primary-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 480px) {
-            .auth-container {
-                padding: var(--space-6);
-                margin: var(--space-4);
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: var(--space-0);
-            }
-        }
-    </style>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
-</head>
-<body class="auth-page">
-    <div class="auth-container">
-        <div class="auth-header">
-            <a href="index.html" class="back-to-home">
-                <span>←</span>
-                <span>Back to Home</span>
-            </a>
-            
-            <a href="index.html" class="auth-logo">
-                <span>🚀</span>
-                <span>APS_X</span>
-            </a>
-            
-            <h1 class="auth-title">Create Account</h1>
-            <p class="auth-subtitle">Join the Hacktoberfest community today</p>
-        </div>
-
-        <form class="auth-form" action="#" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <div class="input-with-icon">
-                        <input 
-                            type="text" 
-                            id="firstName" 
-                            name="firstName" 
-                            class="form-input" 
-                            placeholder="Enter first name"
-                            required
-                            autocomplete="given-name"
-                        >
-                        <span class="input-icon">👤</span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="Register.css" />
+    </head>
+    <body>
+        <section>
+            <div class="login-box">
+                <form action="">
+                    <h2>Sign up</h2>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="Name"></ion-icon
+                        ></span>
+                        <input type="text" required />
+                        <label>Name</label>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <div class="input-with-icon">
-                        <input 
-                            type="text" 
-                            id="lastName" 
-                            name="lastName" 
-                            class="form-input" 
-                            placeholder="Enter last name"
-                            required
-                            autocomplete="family-name"
-                        >
-                        <span class="input-icon">👤</span>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="mail"></ion-icon
+                        ></span>
+                        <input type="email" required />
+                        <label>Email</label>
                     </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="email" class="form-label">Email Address</label>
-                <div class="input-with-icon">
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form-input" 
-                        placeholder="Enter your email"
-                        required
-                        autocomplete="email"
-                    >
-                    <span class="input-icon">📧</span>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="form-label">Password</label>
-                <div class="input-with-icon">
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        class="form-input" 
-                        placeholder="Create a strong password"
-                        required
-                        autocomplete="new-password"
-                        minlength="8"
-                    >
-                    <span class="input-icon">🔒</span>
-                </div>
-                <div class="password-strength">
-                    <div class="strength-indicator">
-                        <div class="strength-bar"></div>
-                        <div class="strength-bar"></div>
-                        <div class="strength-bar"></div>
-                        <div class="strength-bar"></div>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="lock-closed"></ion-icon
+                        ></span>
+                        <input type="password" required />
+                        <label>Password</label>
                     </div>
-                    <div class="strength-text">Use 8+ characters with letters, numbers & symbols</div>
-                </div>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="lock-closed"></ion-icon
+                        ></span>
+                        <input type="password" required />
+                        <label> Confirm Password</label>
+                    </div>
+
+                    <div class="remember-forgot"></div>
+                    <button type="submit">Sign up</button>
+                    
+                    <div class="register-link">
+                        <p>
+                            Already have an account?<a href="login.html"
+                                >Login</a
+                            >
+                        </p>
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <div class="input-with-icon">
-                    <input 
-                        type="password" 
-                        id="confirmPassword" 
-                        name="confirmPassword" 
-                        class="form-input" 
-                        placeholder="Confirm your password"
-                        required
-                        autocomplete="new-password"
-                    >
-                    <span class="input-icon">🔒</span>
-                </div>
-            </div>
-
-            <div class="form-terms">
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">
-                        I agree to the <a href="#" target="_blank">Terms of Service</a> and 
-                        <a href="#" target="_blank">Privacy Policy</a>
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-terms">
-                <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter">
-                    <label for="newsletter">
-                        Subscribe to our newsletter for updates about new components and Hacktoberfest events
-                    </label>
-                </div>
-            </div>
-
-            <button type="submit" class="auth-button">
-                Create Account
-            </button>
-        </form>
-
-        <div class="auth-footer">
-            <p>
-                Already have an account? 
-                <a href="login.html">Sign in here</a>
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // Simple password strength indicator
-        const passwordInput = document.getElementById('password');
-        const strengthBars = document.querySelectorAll('.strength-bar');
-        const strengthText = document.querySelector('.strength-text');
-
-        passwordInput.addEventListener('input', function() {
-            const password = this.value;
-            let strength = 0;
-            let message = 'Use 8+ characters with letters, numbers & symbols';
-
-            // Calculate strength
-            if (password.length >= 8) strength++;
-            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
-            if (/\d/.test(password)) strength++;
-            if (/[^a-zA-Z\d]/.test(password)) strength++;
-
-            // Update bars
-            strengthBars.forEach((bar, index) => {
-                bar.className = 'strength-bar';
-                if (index < strength) {
-                    if (strength <= 1) bar.classList.add('weak');
-                    else if (strength <= 2) bar.classList.add('medium');
-                    else bar.classList.add('strong');
-                }
-            });
-
-            // Update message
-            if (password.length === 0) {
-                message = 'Use 8+ characters with letters, numbers & symbols';
-            } else if (strength <= 1) {
-                message = 'Weak password';
-            } else if (strength <= 2) {
-                message = 'Medium strength';
-            } else if (strength <= 3) {
-                message = 'Strong password';
-            } else {
-                message = 'Very strong password';
-            }
-
-            strengthText.textContent = message;
-        });
-
-        // Confirm password validation
-        const confirmPasswordInput = document.getElementById('confirmPassword');
+        </section>
         
-        confirmPasswordInput.addEventListener('input', function() {
-            if (this.value !== passwordInput.value) {
-                this.setCustomValidity('Passwords do not match');
-            } else {
-                this.setCustomValidity('');
-            }
-        });
-
-        passwordInput.addEventListener('input', function() {
-            if (confirmPasswordInput.value && confirmPasswordInput.value !== this.value) {
-                confirmPasswordInput.setCustomValidity('Passwords do not match');
-            } else {
-                confirmPasswordInput.setCustomValidity('');
-            }
-        });
-    </script>
-</body>
+    </body>
 </html>
