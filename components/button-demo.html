@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Shadow Enhancement - Before/After Demo</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            padding: 40px;
+            background: var(--background-color);
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .before, .after {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .before h3, .after h3 {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .before {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        /* Old button styles for comparison */
+        .old-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-500);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            /* Basic flat shadow */
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            margin: 10px;
+        }
+        
+        .old-button:hover {
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .enhancement-list {
+            background: var(--surface-2-color);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            margin: 30px 0;
+        }
+        
+        .enhancement-list h2 {
+            color: var(--primary-500);
+            margin-bottom: 20px;
+        }
+        
+        .enhancement-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .enhancement-list li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .enhancement-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-500);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .before {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>Button Shadow Enhancement Demo</h1>
+        <p>This demo showcases the enhanced button shadows implemented to improve visual appeal and user experience.</p>
+        
+        <div class="comparison">
+            <div class="before">
+                <h3>❌ Before: Basic Shadows</h3>
+                <button class="old-button">Old Button Style</button>
+                <button class="old-button">Another Button</button>
+                <p>Basic flat shadows with limited visual depth</p>
+            </div>
+            
+            <div class="after">
+                <h3>✅ After: Enhanced Shadows</h3>
+                <button class="btn-primary">Enhanced Primary</button>
+                <button class="btn-secondary">Enhanced Secondary</button>
+                <p>Multi-layered shadows with smooth transitions</p>
+            </div>
+        </div>
+        
+        <div class="enhancement-list">
+            <h2>Shadow Enhancements Implemented</h2>
+            <ul>
+                <li><strong>Multi-layered Shadows:</strong> Combined multiple shadow layers for depth and realism</li>
+                <li><strong>Color-matched Shadows:</strong> Shadows now use button colors with transparency for better integration</li>
+                <li><strong>Smooth Transitions:</strong> Cubic-bezier timing functions for natural motion</li>
+                <li><strong>Hover Amplification:</strong> Dynamic shadow expansion on hover for better feedback</li>
+                <li><strong>Active States:</strong> Pressed button states with appropriate shadow reduction</li>
+                <li><strong>Consistent Focus:</strong> Accessible focus rings with proper contrast</li>
+                <li><strong>Mobile Optimization:</strong> Reduced shadow intensity on mobile for performance</li>
+                <li><strong>Disabled States:</strong> Proper visual feedback for disabled buttons</li>
+            </ul>
+        </div>
+        
+        <h2>All Enhanced Button Types</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 30px 0;">
+            <button class="btn-primary">Primary</button>
+            <button class="btn-secondary">Secondary</button>
+            <button class="btn-accent">Accent</button>
+            <button class="btn-success">Success</button>
+            <button class="btn-danger">Danger</button>
+            <button class="btn-outline">Outline</button>
+            <a href="#" class="button">Link Button</a>
+            <button class="glow-btn">Glow Effect</button>
+            <button class="btn-submit">Submit</button>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--info-100); border-radius: var(--radius); color: var(--info-700);">
+            <strong>Implementation Complete!</strong><br>
+            All buttons now feature consistent, enhanced shadows that improve visual hierarchy and user interaction feedback.
+        </div>
+    </div>
+</body>
+</html>

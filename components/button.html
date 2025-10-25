@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Button Shadows</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .demo-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .demo-section h2 {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-family: var(--font-family-heading);
+        }
+        
+        .button-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .button-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Button Shadows Demo</h1>
+    
+    <div class="demo-section">
+        <h2>Primary Buttons</h2>
+        <div class="button-row">
+            <button class="btn-primary">Primary Button</button>
+            <button class="btn-primary btn-large">Large Primary</button>
+            <button class="btn-primary" disabled>Disabled Primary</button>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Secondary Buttons</h2>
+        <div class="button-row">
+            <button class="btn-secondary">Secondary Button</button>
+            <button class="btn-secondary btn-large">Large Secondary</button>
+            <button class="btn-secondary" disabled>Disabled Secondary</button>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Accent Buttons</h2>
+        <div class="button-row">
+            <button class="btn-accent">Accent Button</button>
+            <button class="btn-accent btn-large">Large Accent</button>
+            <button class="btn-accent" disabled>Disabled Accent</button>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Existing Button Styles</h2>
+        <div class="button-row">
+            <a href="#" class="button">Link Button</a>
+            <button class="glow-btn">Glow Button</button>
+            <button class="btn-submit">Submit Button</button>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Success & Danger Buttons</h2>
+        <div class="button-row">
+            <button class="btn-success">Success Button</button>
+            <button class="btn-danger">Danger Button</button>
+            <button class="btn-outline">Outline Button</button>
+        </div>
+    </div>
+</body>
+</html>
