@@ -49,17 +49,31 @@ h1 {
   display: inline-block;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  padding: 8px 10px;
-  transition: all 0.3s ease;
+  padding: 10px 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--surface-2-color);
-  box-shadow: 2px 2px 4px rgba(82, 74, 74, 0.573);
+  color: var(--text-color);
+  /* Enhanced shadow for consistency */
+  box-shadow: 
+    0 3px 8px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
   background-color: var(--primary-color);
   color: var(--primary-contrast);
-  box-shadow: 2px 2px 10px rgb(86, 79, 79);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  /* Enhanced hover shadow */
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .different-plan:hover {
@@ -146,15 +160,34 @@ h2 {
   font-size: 16px;
   color: var(--text-color);
   background-color: var(--accent-color);
+  border: none;
   border-radius: var(--radius);
   cursor: pointer;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Enhanced base shadow */
+  box-shadow: 
+    0 4px 12px rgba(255, 152, 0, 0.25),
+    0 2px 4px rgba(255, 152, 0, 0.15);
 }
 
 .glow-btn:hover {
-  box-shadow: 0 0 10px #d5b40b, 0 0 20px #ec5e06, 0 0 30px #e50808;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  /* Enhanced glow effect with better shadow layering */
+  box-shadow: 
+    0 0 15px rgba(213, 180, 11, 0.6),
+    0 0 30px rgba(236, 94, 6, 0.4),
+    0 0 45px rgba(229, 8, 8, 0.3),
+    0 8px 20px rgba(255, 152, 0, 0.3);
+}
+
+.glow-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 0 10px rgba(213, 180, 11, 0.7),
+    0 0 20px rgba(236, 94, 6, 0.5),
+    0 0 30px rgba(229, 8, 8, 0.4),
+    0 4px 12px rgba(255, 152, 0, 0.4);
 }
 
 /* Contact form styles (kept in main css so components share theme) */
@@ -246,19 +279,32 @@ textarea::placeholder {
   margin-top: 6px;
 }
 .btn-submit {
-  background: linear-gradient(90deg, var(--primary-color), #7b3bff);
+  background: linear-gradient(135deg, var(--primary-color), #7b3bff);
   color: var(--primary-contrast);
-  padding: 10px 16px;
+  padding: 12px 20px;
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 6px 16px rgba(98, 0, 234, 0.14);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Enhanced base shadow */
+  box-shadow: 
+    0 4px 12px rgba(98, 0, 234, 0.25),
+    0 2px 6px rgba(98, 0, 234, 0.15);
 }
 .btn-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(98, 0, 234, 0.18);
+  background: linear-gradient(135deg, #7b3bff, var(--primary-color));
+  /* Enhanced hover shadow */
+  box-shadow: 
+    0 8px 25px rgba(98, 0, 234, 0.3),
+    0 4px 12px rgba(98, 0, 234, 0.2);
+}
+.btn-submit:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 3px 10px rgba(98, 0, 234, 0.3),
+    0 2px 6px rgba(98, 0, 234, 0.2);
 }
 .hint {
   font-size: 13px;
@@ -537,5 +583,283 @@ textarea::placeholder {
 /* Utility: compact density */
 .grid--dense {
   gap: 12px;
+}
+
+/* =============================================================================
+   ENHANCED BUTTON SHADOWS - Consistent shadow system for all buttons
+   ============================================================================= */
+
+/* Base button styling with enhanced shadows */
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-success,
+.btn-danger,
+.btn-outline {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  
+  /* Enhanced default shadow - subtle and elegant */
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Large button variant */
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+  min-width: 150px;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(33, 150, 243, 0.3),
+    0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(33, 150, 243, 0.4),
+    0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(33, 150, 243, 0.4),
+    0 1px 4px rgba(33, 150, 243, 0.3);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(156, 39, 176, 0.3),
+    0 2px 4px rgba(156, 39, 176, 0.2);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700));
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(156, 39, 176, 0.4),
+    0 4px 12px rgba(156, 39, 176, 0.3);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(156, 39, 176, 0.4),
+    0 1px 4px rgba(156, 39, 176, 0.3);
+}
+
+/* Accent Button */
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(255, 152, 0, 0.3),
+    0 2px 4px rgba(255, 152, 0, 0.2);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--accent-600), var(--accent-700));
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(255, 152, 0, 0.4),
+    0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(255, 152, 0, 0.4),
+    0 1px 4px rgba(255, 152, 0, 0.3);
+}
+
+/* Success Button */
+.btn-success {
+  background: linear-gradient(135deg, var(--success-500), var(--success-700));
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(76, 175, 80, 0.3),
+    0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--success-700), #2e7d32);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(76, 175, 80, 0.4),
+    0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(76, 175, 80, 0.4),
+    0 1px 4px rgba(76, 175, 80, 0.3);
+}
+
+/* Danger Button */
+.btn-danger {
+  background: linear-gradient(135deg, var(--error-500), var(--error-700));
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(244, 67, 54, 0.3),
+    0 2px 4px rgba(244, 67, 54, 0.2);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, var(--error-700), #c62828);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(244, 67, 54, 0.4),
+    0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.btn-danger:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(244, 67, 54, 0.4),
+    0 1px 4px rgba(244, 67, 54, 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  color: var(--primary-500);
+  border: 2px solid var(--primary-500);
+  box-shadow: 
+    0 2px 8px rgba(33, 150, 243, 0.15),
+    0 1px 4px rgba(33, 150, 243, 0.1);
+}
+
+.btn-outline:hover {
+  background: var(--primary-500);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(33, 150, 243, 0.3),
+    0 3px 8px rgba(33, 150, 243, 0.2);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(33, 150, 243, 0.3),
+    0 1px 4px rgba(33, 150, 243, 0.2);
+}
+
+/* Disabled state for all buttons */
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-accent:disabled,
+.btn-success:disabled,
+.btn-danger:disabled,
+.btn-outline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Enhanced existing button styles for consistency */
+
+/* Focus states for accessibility */
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-accent:focus,
+.btn-success:focus,
+.btn-danger:focus,
+.btn-outline:focus,
+.button:focus,
+.glow-btn:focus,
+.btn-submit:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgba(33, 150, 243, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for button press effect */
+@keyframes buttonPress {
+  0% { transform: translateY(-2px); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-2px); }
+}
+
+/* Subtle pulse animation for attention-grabbing buttons */
+@keyframes subtlePulse {
+  0%, 100% { 
+    box-shadow: 
+      0 4px 12px rgba(33, 150, 243, 0.3),
+      0 2px 4px rgba(33, 150, 243, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 6px 16px rgba(33, 150, 243, 0.4),
+      0 3px 6px rgba(33, 150, 243, 0.3);
+  }
+}
+
+/* Apply pulse animation to specific buttons when needed */
+.btn-primary.pulse {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent,
+  .btn-success,
+  .btn-danger,
+  .btn-outline {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 100px;
+  }
+  
+  .btn-large {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-width: 120px;
+  }
+  
+  /* Reduce shadow intensity on mobile for performance */
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-accent:hover,
+  .btn-success:hover,
+  .btn-danger:hover,
+  .btn-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 6px 18px rgba(0, 0, 0, 0.2),
+      0 3px 8px rgba(0, 0, 0, 0.15);
+  }
 }
 
