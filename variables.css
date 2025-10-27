@@ -1,0 +1,7 @@
+:root{
+  --nav-bg-color: #071029;
+  --nav-text-color: #e6f0ff;
+  --nav-accent: #7dd3fc;
+  --nav-toggle-color: #dbeafe;
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
