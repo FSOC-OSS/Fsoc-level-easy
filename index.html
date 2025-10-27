@@ -58,121 +58,726 @@
       <div class="btn_container">
         <a href="#modal"><button class="btn fade-in">APS_X</button></a>
       </div>
-      <div class="modalBox fade-in" id="modal">
-        <p class="modalTitle fade-in">Sample Modal Popup</p>
-        <p class="modalContent fade-in">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nostrum
-          quo cum?
-        </p>
-        <hr />
-        <p class="modalClose"><a href="#">Close</a></p>
-      </div>
-      <section>
-        <h2 class="fade-in">Sample Component</h2>
-        <iframe src="components/sample-card.html" frameborder="0"></iframe>
-      </section>
-
-                          
-     
-      <!-- Typewriter effect for paragraph -->
-      <section class="card typewriter-card">
-        <p class="typewriter-text fade-in">
-          Welcome to FSoC! This was the issue assigned to me, thank you!.
-        </p>
-      </section>
-      <!-- Flip Card Component -->
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <h3>Hacktoberfest</h3>
-      <p>A month long open source contribution</p>
-     
-    </div>
-    <div class="flip-card-back">
-      <h3>Do Participate</h3>
-      <p>Let's build the future of open source together</p>
     </div>
   </div>
-</div>
 
-      <div class="btn_container">
-        <button class="btn fade-in">APS_X</button>
+  <!-- Main Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="navbar-brand">
+          <a href="#" class="brand-link" aria-label="APS_X Home">
+            <span class="brand-icon">🚀</span>
+            <span class="brand-text">APS_X</span>
+          </a>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <input type="checkbox" id="nav_toggle" class="nav_toggle" aria-hidden="true">
+        <label for="nav_toggle" class="nav_icon" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </label>
+        
+        <!-- Navigation links -->
+        <ul class="nav_links" role="list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#components" class="nav-link">Components</a></li>
+          <li><a href="#showcase" class="nav-link">Showcase</a></li>
+          <li><a href="components/form.html" class="nav-link">Contact</a></li>
+          <li><a href="components/gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="login.html" class="nav-link btn-outline">Login</a></li>
+        </ul>
       </div>
-    </main>
-   
-    <footer>
-      <p class="linkToFest">
-        Register at
-        <span class="mainLink"
-          ><a href="https://hacktoberfest.com/">Hacktoberfest</a></span
-        >
-        Now!
-      </p>
-      <div class="footerMiddle">
-        <div class="linkToSocials">
-          <p>Link to Socials</p>
-          <ul>
-            <li>
-              <img
-                src=""
-                alt="https://yt3.googleusercontent.com/PKRBxhCiGa8Y0vPmHa1E2cdjpLhUq2Pl-gESwP7kk2plGgxLdsbjyTd9VjcJwBMiY0HQ8bvx5Q=s900-c-k-c0x00ffffff-no-rj"
-                height="15px"
-                width="15px"
-              /><a target="_blank" href="https://github.com/">Github</a>
-            </li>
-            <li>
-              <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7f/df/7c/7fdf7c64-d78d-33ca-707f-e2147e91e498/Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/1200x630wa.png"
-                height="15px"
-                width="15px"
-                alt=""
-              /><a target="_blank" href="https://instagram.com/">Instagram</a>
-            </li>
-            <li>
-              <img
-                src="https://img.freepik.com/premium-vector/linkedin-logo-icon_1273375-1174.jpg"
-                height="15px"
-                width="15px"
-              /><a
-                target="_blank"
-                href="https://linkedin.com/"
-                height="15px"
-                width="15px"
-                >Linked In</a
-              >
-            </li>
-          </ul>
-        </div>  
-        <div class="contactUs">
-          <p>Contact Us</p>
-          <ul>
-            <li>PhoneNo: 1212344556</li>
-            <li>
-              <img src="" alt="" /><span>Email: </span
-              ><a href="gmail.com">Sample@example.com</a>
-            </li>
-          </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">�</span>
+          <span class="badge-text">Hacktoberfest 2025</span>
+        </div>
+        <h1 class="hero-title">
+          CSS Playground
+          <span class="title-highlight">for Developers</span>
+        </h1>
+        <p class="hero-description typewriter-text">
+          Discover modern, responsive components built with semantic HTML & CSS. 
+          Perfect for learning, contributing, and building amazing web experiences.
+        </p>
+        <div class="hero-actions">
+          <a href="#components" class="btn btn-primary btn-lg">
+            <span>Explore Components</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a href="https://github.com/FSOC-OSS/Fsoc-level-easy" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            <span class="btn-icon">⭐</span>
+            <span>Star on GitHub</span>
+          </a>
         </div>
       </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-card card-1">
+            <div class="card-content">
+              <div class="card-icon">🎨</div>
+              <h3>Modern Design</h3>
+            </div>
+          </div>
+          <div class="hero-card card-2">
+            <div class="card-content">
+              <div class="card-icon">📱</div>
+              <h3>Responsive</h3>
+            </div>
+          </div>
+          <div class="hero-card card-3">
+            <div class="card-content">
+              <div class="card-icon">⚡</div>
+              <h3>Fast & Clean</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Components</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Themes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Responsive</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Open</div>
+            <div class="stat-label">Source</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Showcase Section -->
+    <section id="components" class="components-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Components</h2>
+          <p class="section-description">
+            Explore our collection of modern, reusable components designed with accessibility and performance in mind.
+          </p>
+        </div>
+
+        <div class="components-grid">
+          <!-- Sample Card Component -->
+          <article class="component-showcase">
+            <div class="component-header">
+              <h3 class="component-title">Sample Cards</h3>
+              <span class="component-badge">Interactive</span>
+            </div>
+            <div class="component-preview">
+              <iframe src="components/sample-card.html" 
+                      title="Sample card component demo"
+                      loading="lazy"
+                      class="component-iframe"></iframe>
+            </div>
+            <div class="component-footer">
+              <p class="component-description">Beautiful card layouts with hover effects and responsive design.</p>
+              <a href="components/sample-card.html" class="btn btn-sm btn-outline" target="_blank">
+                View Full Demo
+              </a>
+            </div>
+          </article>
+
+          <!-- Form Component -->
+          <article class="component-showcase">
+            <div class="component-header">
+              <h3 class="component-title">Contact Forms</h3>
+              <span class="component-badge">Forms</span>
+            </div>
+            <div class="component-preview">
+              <iframe src="components/form.html" 
+                      title="Contact form component demo"
+                      loading="lazy"
+                      class="component-iframe"
+                      style="height: 500px;"></iframe>
+            </div>
+            <div class="component-footer">
+              <p class="component-description">Accessible forms with validation and modern styling.</p>
+              <a href="components/form.html" class="btn btn-sm btn-outline" target="_blank">
+                View Full Demo
+              </a>
+            </div>
+          </article>
+
+          <!-- Pricing Component -->
+          <article class="component-showcase">
+            <div class="component-header">
+              <h3 class="component-title">Pricing Tables</h3>
+              <span class="component-badge">Business</span>
+            </div>
+            <div class="component-preview">
+              <iframe src="components/pricing.html" 
+                      title="Pricing table component demo"
+                      loading="lazy"
+                      class="component-iframe"></iframe>
+            </div>
+            <div class="component-footer">
+              <p class="component-description">Professional pricing tables with feature comparisons.</p>
+              <a href="components/pricing.html" class="btn btn-sm btn-outline" target="_blank">
+                View Full Demo
+              </a>
+            </div>
+          </article>
+
+          <!-- Interactive Elements -->
+          <article class="component-showcase">
+            <div class="component-header">
+              <h3 class="component-title">Interactive Elements</h3>
+              <span class="component-badge">Animation</span>
+            </div>
+            <div class="component-preview">
+              <div class="interactive-demo">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="card-icon">🎃</div>
+                      <h4>Hacktoberfest</h4>
+                      <p>A month long celebration</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-icon">🚀</div>
+                      <h4>Join Us!</h4>
+                      <p>Build the future together</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="component-footer">
+              <p class="component-description">Hover and click interactions with smooth animations.</p>
+              <a href="#modal" class="btn btn-sm btn-outline">
+                Try Interactive
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Modal -->
+    <div class="modal-overlay" id="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h3 id="modal-title" class="modal-title">🎉 Welcome to Hacktoberfest!</h3>
+          <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        </div>
+        <div class="modal-body">
+          <p class="modal-content">
+            Thanks for exploring our components! This is an example of a modern, accessible modal dialog.
+          </p>
+          <div class="typewriter-demo">
+            <p class="typewriter-text">Keep contributing to open source! 🚀</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn btn-primary">Get Started</a>
+          <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Highlights Section -->
+    <section id="showcase" class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Our Components?</h2>
+          <p class="section-description">Built with modern web standards and best practices.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>♿</span>
+            </div>
+            <h3 class="feature-title">Accessible</h3>
+            <p class="feature-description">
+              Built with ARIA labels, semantic HTML, and keyboard navigation support.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>📱</span>
+            </div>
+            <h3 class="feature-title">Responsive</h3>
+            <p class="feature-description">
+              Perfectly optimized for all screen sizes from mobile to desktop.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>🎨</span>
+            </div>
+            <h3 class="feature-title">Customizable</h3>
+            <p class="feature-description">
+              Multiple themes and easy-to-modify CSS custom properties.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>⚡</span>
+            </div>
+            <h3 class="feature-title">Performance</h3>
+            <p class="feature-description">
+              Lightweight, optimized CSS with smooth animations and transitions.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>🔧</span>
+            </div>
+            <h3 class="feature-title">Modern CSS</h3>
+            <p class="feature-description">
+              Uses CSS Grid, Flexbox, custom properties, and modern techniques.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span>🎯</span>
+            </div>
+            <h3 class="feature-title">Purpose-Built</h3>
+            <p class="feature-description">
+              Each component solves real-world problems with clean, maintainable code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Ready to Contribute?</h2>
+          <p class="cta-description">
+            Join the Hacktoberfest community and help us build amazing open source components!
+          </p>
+          <div class="cta-actions">
+            <a href="https://hacktoberfest.com/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+              <span>Join Hacktoberfest</span>
+              <span class="btn-icon">🎃</span>
+            </a>
+            <a href="https://github.com/FSOC-OSS/Fsoc-level-easy" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+              <span class="btn-icon">📚</span>
+              <span>View Documentation</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Footer Main -->
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="brand-icon">🚀</span>
+              <span class="brand-text">APS_X</span>
+            </div>
+            <p class="footer-description">
+              Building modern, accessible web components for the open source community.
+              Join us in making the web better, one component at a time.
+            </p>
+            <div class="footer-social">
+              <a href="https://github.com/FSOC-OSS/Fsoc-level-easy" 
+                 class="social-link" 
+                 aria-label="GitHub Repository"
+                 target="_blank" 
+                 rel="noopener">
+                <span class="social-icon">📱</span>
+                GitHub
+              </a>
+              <a href="#" 
+                 class="social-link" 
+                 aria-label="Twitter Profile"
+                 target="_blank" 
+                 rel="noopener">
+                <span class="social-icon">🐦</span>
+                Twitter
+              </a>
+              <a href="#" 
+                 class="social-link" 
+                 aria-label="LinkedIn Profile"
+                 target="_blank" 
+                 rel="noopener">
+                <span class="social-icon">💼</span>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-heading">Components</h4>
+              <ul class="footer-list">
+                <li><a href="components/form.html" class="footer-link">Forms</a></li>
+                <li><a href="components/sample-card.html" class="footer-link">Cards</a></li>
+                <li><a href="components/pricing.html" class="footer-link">Pricing</a></li>
+                <li><a href="components/gallery.html" class="footer-link">Gallery</a></li>
+                <li><a href="components/loader.html" class="footer-link">Loaders</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4 class="footer-heading">Resources</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">Documentation</a></li>
+                <li><a href="#" class="footer-link">Examples</a></li>
+                <li><a href="#" class="footer-link">Tutorials</a></li>
+                <li><a href="#" class="footer-link">Best Practices</a></li>
+                <li><a href="#" class="footer-link">Guidelines</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4 class="footer-heading">Community</h4>
+              <ul class="footer-list">
+                <li><a href="https://hacktoberfest.com/" class="footer-link" target="_blank" rel="noopener">Hacktoberfest</a></li>
+                <li><a href="#" class="footer-link">Contributors</a></li>
+                <li><a href="#" class="footer-link">Issues</a></li>
+                <li><a href="#" class="footer-link">Discussions</a></li>
+                <li><a href="#" class="footer-link">Roadmap</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4 class="footer-heading">Support</h4>
+              <ul class="footer-list">
+                <li><a href="components/form.html" class="footer-link">Contact Us</a></li>
+                <li><a href="#" class="footer-link">Help Center</a></li>
+                <li><a href="#" class="footer-link">Report Bug</a></li>
+                <li><a href="#" class="footer-link">Feature Request</a></li>
+                <li><a href="mailto:support@example.com" class="footer-link">Email Support</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="footer-copyright">
+              <p>© 2025 APS_X. Made with ❤️ for <a href="https://hacktoberfest.com/" target="_blank" rel="noopener" class="hacktoberfest-link">Hacktoberfest</a></p>
+            </div>
+            <div class="footer-meta">
+              <a href="#" class="footer-meta-link">Privacy Policy</a>
+              <span class="footer-divider">•</span>
+              <a href="#" class="footer-meta-link">Terms of Service</a>
+              <span class="footer-divider">•</span>
+              <a href="#" class="footer-meta-link">Code of Conduct</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced Theme Management
+    class ThemeManager {
+      constructor() {
+        this.init();
+      }
       
-      <p style="text-align: center; color: white">
-        Made with ❤️ for Hacktoberfest
-      </p>
-    </footer>
-    <button id="theme-toggle" class="theme-toggle-btn">
-      &#127774; / &#127769;
-    </button>
-
-    <script>
-      const themeToggleButton = document.getElementById("theme-toggle");
-      const body = document.body;
-      const navbar = document.querySelector(".navbar");
-      themeToggleButton.addEventListener("click", () => {
-        body.classList.toggle("dark-theme");
-        navbar.classList.toggle("dark-theme");
-      });
-    </script>
+      init() {
+        this.setupThemeToggle();
+        this.setupPaletteControls();
+        this.setupNavigation();
+        this.setupAnimations();
+        this.loadSavedPreferences();
+      }
+      
+      setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+          const isDark = document.body.classList.contains('dark-theme');
+          
+          if (isDark) {
+            document.body.classList.remove('dark-theme');
+            document.body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.body.classList.add('dark-theme');
+            document.body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+          }
+          
+          // Animate the transition
+          document.body.style.transition = 'all 0.3s ease';
+          setTimeout(() => {
+            document.body.style.transition = '';
+          }, 300);
+        });
+      }
+      
+      setupPaletteControls() {
+        const paletteButtons = document.querySelectorAll('.palette-btn');
+        const paletteNames = ['palette-ocean', 'palette-forest', 'palette-lavender', 'palette-sunset', 'palette-dark'];
+        
+        const clearPalettes = () => {
+          paletteNames.forEach(palette => {
+            document.body.classList.remove(palette);
+          });
+        };
+        
+        paletteButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const palette = button.dataset.palette;
+            
+            // Clear all palettes first
+            clearPalettes();
+            
+            // Apply new palette
+            if (palette) {
+              document.body.classList.add(palette);
+              localStorage.setItem('palette', palette);
+            }
+            
+            // Update active state
+            paletteButtons.forEach(btn => {
+              btn.classList.toggle('active', btn === button);
+            });
+            
+            // Special handling for dark palette
+            if (palette === 'palette-dark') {
+              document.body.classList.add('dark-theme');
+              document.body.setAttribute('data-theme', 'dark');
+              localStorage.setItem('theme', 'dark');
+            }
+          });
+        });
+      }
+      
+      setupNavigation() {
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+        
+        navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              
+              // Close mobile menu if open
+              const navToggle = document.getElementById('nav_toggle');
+              if (navToggle) {
+                navToggle.checked = false;
+              }
+              
+              // Update active nav link
+              navLinks.forEach(nl => nl.classList.remove('active'));
+              link.classList.add('active');
+            }
+          });
+        });
+        
+        // Auto-close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          const navbar = document.querySelector('.navbar');
+          const navToggle = document.getElementById('nav_toggle');
+          
+          if (navToggle && navToggle.checked && !navbar.contains(e.target)) {
+            navToggle.checked = false;
+          }
+        });
+      }
+      
+      setupAnimations() {
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        const animatedElements = document.querySelectorAll('.component-showcase, .feature-card, .stat-card');
+        animatedElements.forEach(el => {
+          observer.observe(el);
+        });
+        
+        // Parallax effect for hero cards
+        const heroCards = document.querySelectorAll('.hero-card');
+        let ticking = false;
+        
+        const updateParallax = () => {
+          const scrolled = window.pageYOffset;
+          const rate = scrolled * -0.5;
+          
+          heroCards.forEach((card, index) => {
+            const yPos = -(rate * (index + 1) * 0.1);
+            card.style.transform = `translateY(${yPos}px)`;
+          });
+          
+          ticking = false;
+        };
+        
+        const requestTick = () => {
+          if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+          }
+        };
+        
+        window.addEventListener('scroll', requestTick, { passive: true });
+      }
+      
+      loadSavedPreferences() {
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          document.body.setAttribute('data-theme', 'dark');
+        }
+        
+        // Load saved palette
+        const savedPalette = localStorage.getItem('palette');
+        if (savedPalette) {
+          document.body.classList.add(savedPalette);
+          const activeButton = document.querySelector(`[data-palette="${savedPalette}"]`);
+          if (activeButton) {
+            activeButton.classList.add('active');
+          }
+        }
+      }
+    }
     
-  </body>
+    // Modal functionality
+    class ModalManager {
+      constructor() {
+        this.setupModals();
+      }
+      
+      setupModals() {
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal-overlay')) {
+            this.closeModal(e.target);
+          }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            const openModal = document.querySelector('.modal-overlay:target');
+            if (openModal) {
+              this.closeModal(openModal);
+            }
+          }
+        });
+        
+        // Close button functionality
+        const closeButtons = document.querySelectorAll('.modal-close');
+        closeButtons.forEach(button => {
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modal = button.closest('.modal-overlay');
+            this.closeModal(modal);
+          });
+        });
+      }
+      
+      closeModal(modal) {
+        if (modal) {
+          window.location.hash = '';
+        }
+      }
+    }
+    
+    // Performance optimizations
+    const optimizeImages = () => {
+      const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+      
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target;
+            // Iframe is now visible, it will load automatically due to loading="lazy"
+            imageObserver.unobserve(iframe);
+          }
+        });
+      });
+      
+      iframes.forEach(iframe => {
+        imageObserver.observe(iframe);
+      });
+    };
+    
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new ThemeManager();
+      new ModalManager();
+      optimizeImages();
+      
+      // Add smooth loading animation
+      document.body.classList.add('loaded');
+      
+      // Enhanced button interactions
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+    
+    // Add loading state
+    document.body.style.opacity = '0';
+    window.addEventListener('load', () => {
+      document.body.style.transition = 'opacity 0.3s ease';
+      document.body.style.opacity = '1';
+    });
+  </script>
+</body>
 </html>
