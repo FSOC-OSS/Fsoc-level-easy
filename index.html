@@ -5,26 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hacktoberfest CSS Playground</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="navstyle.css" />
+  <link rel="stylesheet" href="dark.css" />
+
   </head>
   <body>
-    <nav class="navbar">
-      <div class="mysite">APS_X</div>
-      <input type="checkbox" id="nav_toggle" class="nav_toggle" />
-      <label for="nav_toggle" class="nav_icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <ul class="nav_links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="components/form.html">Contact</a></li>
-        <li><a href="components/gallery.html">Gallery</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
+   <!-- Main Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-inner">
+        <div class="navbar-brand"></div>
+         <div class="mysite">APS_X</div>
+        
+        <!-- Mobile menu toggle -->
+        <input type="checkbox" id="nav_toggle" class="nav_toggle" aria-hidden="true">
+        <label for="nav_toggle" class="nav_icon" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </label>
+        
+        <!-- Navigation links -->
+        <ul class="nav_links" role="list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#components" class="nav-link">Components</a></li>
+          <li><a href="#showcase" class="nav-link">Showcase</a></li>
+          <li><a href="components/form.html" class="nav-link">Contact</a></li>
+          <li><a href="components/gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="login.html" class="nav-link btn-outline">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <!-- Hero Section Start -->
 <section class="hero">
   <div class="hero__content">
@@ -61,37 +74,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="navbar-inner">
-        <div class="navbar-brand">
-          <a href="#" class="brand-link" aria-label="APS_X Home">
-            <span class="brand-icon">🚀</span>
-            <span class="brand-text">APS_X</span>
-          </a>
-        </div>
-        
-        <!-- Mobile menu toggle -->
-        <input type="checkbox" id="nav_toggle" class="nav_toggle" aria-hidden="true">
-        <label for="nav_toggle" class="nav_icon" aria-label="Toggle navigation menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </label>
-        
-        <!-- Navigation links -->
-        <ul class="nav_links" role="list">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#components" class="nav-link">Components</a></li>
-          <li><a href="#showcase" class="nav-link">Showcase</a></li>
-          <li><a href="components/form.html" class="nav-link">Contact</a></li>
-          <li><a href="components/gallery.html" class="nav-link">Gallery</a></li>
-          <li><a href="login.html" class="nav-link btn-outline">Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  
 
   <!-- Hero Section -->
   <header id="hero" class="hero-section">
@@ -181,26 +164,9 @@
           </p>
         </div>
 
-        <div class="components-grid">
-          <!-- Sample Card Component -->
-          <article class="component-showcase">
-            <div class="component-header">
-              <h3 class="component-title">Sample Cards</h3>
-              <span class="component-badge">Interactive</span>
-            </div>
-            <div class="component-preview">
-              <iframe src="components/sample-card.html" 
-                      title="Sample card component demo"
-                      loading="lazy"
-                      class="component-iframe"></iframe>
-            </div>
-            <div class="component-footer">
-              <p class="component-description">Beautiful card layouts with hover effects and responsive design.</p>
-              <a href="components/sample-card.html" class="btn btn-sm btn-outline" target="_blank">
-                View Full Demo
-              </a>
-            </div>
-          </article>
+        
+          
+                      
 
           <!-- Form Component -->
           <article class="component-showcase">
@@ -223,25 +189,7 @@
             </div>
           </article>
 
-          <!-- Pricing Component -->
-          <article class="component-showcase">
-            <div class="component-header">
-              <h3 class="component-title">Pricing Tables</h3>
-              <span class="component-badge">Business</span>
-            </div>
-            <div class="component-preview">
-              <iframe src="components/pricing.html" 
-                      title="Pricing table component demo"
-                      loading="lazy"
-                      class="component-iframe"></iframe>
-            </div>
-            <div class="component-footer">
-              <p class="component-description">Professional pricing tables with feature comparisons.</p>
-              <a href="components/pricing.html" class="btn btn-sm btn-outline" target="_blank">
-                View Full Demo
-              </a>
-            </div>
-          </article>
+          
 
           <!-- Interactive Elements -->
           <article class="component-showcase">
@@ -779,5 +727,80 @@
       document.body.style.opacity = '1';
     });
   </script>
+  <!-- Code injected by live-server -->
+
+<script>
+
+	// <![CDATA[  <-- For SVG support
+
+	if ('WebSocket' in window) {
+
+		(function () {
+
+			function refreshCSS() {
+
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+
+				var head = document.getElementsByTagName("head")[0];
+
+				for (var i = 0; i < sheets.length; ++i) {
+
+					var elem = sheets[i];
+
+					var parent = elem.parentElement || head;
+
+					parent.removeChild(elem);
+
+					var rel = elem.rel;
+
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+
+					}
+
+					parent.appendChild(elem);
+
+				}
+
+			}
+
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+
+			var socket = new WebSocket(address);
+
+			socket.onmessage = function (msg) {
+
+				if (msg.data == 'reload') window.location.reload();
+
+				else if (msg.data == 'refreshcss') refreshCSS();
+
+			};
+
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+
+				console.log('Live reload enabled.');
+
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+
+			}
+
+		})();
+
+	}
+
+	else {
+
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+
+	}
+
+	// ]]>
+
+</script>
 </body>
 </html>
