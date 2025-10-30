@@ -1,73 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacktoberfest CSS Playground - Modern Components & Designs</title>
-  <meta name="description" content="Explore awesome HTML & CSS components with modern design patterns, animations, and responsive layouts for Hacktoberfest 2025.">
-  
-  <!-- Preconnect to external fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Font imports -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets in order of importance -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="modern-style.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
-</head>
-<body>
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <!-- Theme Controls Header -->
-  <div class="theme-controls" role="toolbar" aria-label="Theme selection">
-    <div class="container">
-      <div class="theme-controls-inner">
-        <div class="palette-controls" role="group" aria-label="Color palette selection">
-          <button class="palette-btn" data-palette="palette-ocean" aria-label="Ocean theme">
-            <span class="palette-preview ocean"></span>
-            Ocean
-          </button>
-          <button class="palette-btn" data-palette="palette-forest" aria-label="Forest theme">
-            <span class="palette-preview forest"></span>
-            Forest
-          </button>
-          <button class="palette-btn" data-palette="palette-lavender" aria-label="Lavender theme">
-            <span class="palette-preview lavender"></span>
-            Lavender
-          </button>
-          <button class="palette-btn" data-palette="palette-sunset" aria-label="Sunset theme">
-            <span class="palette-preview sunset"></span>
-            Sunset
-          </button>
-          <button class="palette-btn" data-palette="palette-dark" aria-label="Dark theme">
-            <span class="palette-preview dark"></span>
-            Dark
-          </button>
-        </div>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle between light and dark theme">
-          <span class="theme-icon light">☀️</span>
-          <span class="theme-icon dark">🌙</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacktoberfest CSS Playground</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="navstyle.css" />
+  <link rel="stylesheet" href="dark.css" />
 
-  <!-- Main Navigation -->
+  </head>
+  <body>
+   <!-- Main Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
       <div class="navbar-inner">
-        <div class="navbar-brand">
-          <a href="#" class="brand-link" aria-label="APS_X Home">
-            <span class="brand-icon">🚀</span>
-            <span class="brand-text">APS_X</span>
-          </a>
-        </div>
+        <div class="navbar-brand"></div>
+         <div class="mysite">APS_X</div>
         
         <!-- Mobile menu toggle -->
         <input type="checkbox" id="nav_toggle" class="nav_toggle" aria-hidden="true">
@@ -89,6 +38,43 @@
       </div>
     </div>
   </nav>
+    <!-- Hero Section Start -->
+<section class="hero">
+  <div class="hero__content">
+    <div class="hero__text">
+      <h1>Empowering Ideas with Innovation</h1>
+      <p>
+       Join our community to explore and contribute to exciting open-source projects.
+      </p>
+      <a href="Register.html" class="hero__cta">Get Started</a>
+    </div>
+    <div class="hero__image">
+      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.clipart.com%2Fwhy-teaching-coding-to-middle-and-highschool-students%2F&psig=AOvVaw3sjmfzVsWPQNQFujqiqyNE&ust=1761687426294000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOj5kLmrxZADFQAAAAAdAAAAABAE" alt="Innovation illustration">
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
+    <header class="fade-in">
+      <h1 class="fade-in">🎉 Hacktoberfest CSS Playground 🎉</h1>
+      <p class="typewriter-text">
+        Explore awesome components built with HTML & CSS!
+      </p>
+    </header>
+    <main class="fade-in">
+      <section class="fade-in">
+        <h2 class="fade-in">Sample Component</h2>
+        <iframe src="components/sample-card.html" frameborder="0"></iframe>
+      </section>
+      <section class="price-table fade-in">
+        <iframe src="components/pricing.html" frameborder="0"></iframe>
+      </section>
+      <div class="btn_container">
+        <a href="#modal"><button class="btn fade-in">APS_X</button></a>
+      </div>
+    </div>
+  </div>
+
+  
 
   <!-- Hero Section -->
   <header id="hero" class="hero-section">
@@ -178,26 +164,9 @@
           </p>
         </div>
 
-        <div class="components-grid">
-          <!-- Sample Card Component -->
-          <article class="component-showcase">
-            <div class="component-header">
-              <h3 class="component-title">Sample Cards</h3>
-              <span class="component-badge">Interactive</span>
-            </div>
-            <div class="component-preview">
-              <iframe src="components/sample-card.html" 
-                      title="Sample card component demo"
-                      loading="lazy"
-                      class="component-iframe"></iframe>
-            </div>
-            <div class="component-footer">
-              <p class="component-description">Beautiful card layouts with hover effects and responsive design.</p>
-              <a href="components/sample-card.html" class="btn btn-sm btn-outline" target="_blank">
-                View Full Demo
-              </a>
-            </div>
-          </article>
+        
+          
+                      
 
           <!-- Form Component -->
           <article class="component-showcase">
@@ -220,25 +189,7 @@
             </div>
           </article>
 
-          <!-- Pricing Component -->
-          <article class="component-showcase">
-            <div class="component-header">
-              <h3 class="component-title">Pricing Tables</h3>
-              <span class="component-badge">Business</span>
-            </div>
-            <div class="component-preview">
-              <iframe src="components/pricing.html" 
-                      title="Pricing table component demo"
-                      loading="lazy"
-                      class="component-iframe"></iframe>
-            </div>
-            <div class="component-footer">
-              <p class="component-description">Professional pricing tables with feature comparisons.</p>
-              <a href="components/pricing.html" class="btn btn-sm btn-outline" target="_blank">
-                View Full Demo
-              </a>
-            </div>
-          </article>
+          
 
           <!-- Interactive Elements -->
           <article class="component-showcase">
@@ -776,5 +727,80 @@
       document.body.style.opacity = '1';
     });
   </script>
+  <!-- Code injected by live-server -->
+
+<script>
+
+	// <![CDATA[  <-- For SVG support
+
+	if ('WebSocket' in window) {
+
+		(function () {
+
+			function refreshCSS() {
+
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+
+				var head = document.getElementsByTagName("head")[0];
+
+				for (var i = 0; i < sheets.length; ++i) {
+
+					var elem = sheets[i];
+
+					var parent = elem.parentElement || head;
+
+					parent.removeChild(elem);
+
+					var rel = elem.rel;
+
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+
+					}
+
+					parent.appendChild(elem);
+
+				}
+
+			}
+
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+
+			var socket = new WebSocket(address);
+
+			socket.onmessage = function (msg) {
+
+				if (msg.data == 'reload') window.location.reload();
+
+				else if (msg.data == 'refreshcss') refreshCSS();
+
+			};
+
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+
+				console.log('Live reload enabled.');
+
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+
+			}
+
+		})();
+
+	}
+
+	else {
+
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+
+	}
+
+	// ]]>
+
+</script>
 </body>
 </html>

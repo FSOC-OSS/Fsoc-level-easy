@@ -20,20 +20,8 @@ header.dark-theme {
   color: var(--text-dark);
 }
 
-.navbar.dark-theme {
-  background: var(--surface-dark);
-  color: var(--text-dark);
-  box-shadow: 0 2px 8px var(--shadow-dark);
-}
 
-.nav_links li a {
-  color: var(--text-dark);
-}
-.nav_links li a:hover,
-.nav_links li a:focus {
-  background: var(--primary-dark);
-  color: var(--accent-dark);
-}
+
 
 main.dark-theme,
 section.dark-theme {

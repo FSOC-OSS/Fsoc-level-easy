@@ -1,267 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Hacktoberfest CSS Playground</title>
-    <meta name="description" content="Sign in to your account and start exploring modern CSS components.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="modern-style.css">
-    
-    <!-- Additional styles for auth pages -->
-    <style>
-        /* Auth Page Specific Styles */
-        .auth-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color)20 0%, var(--accent-color)10 100%);
-            padding: var(--space-4);
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login Page</title>
+        <link rel="stylesheet" href="login.css" />
+        <link rel="stylesheet" href="variables.css">
+    </head>
+    <body>
+         <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__container">
+                <a href="#" class="navbar__brand">MyApp</a>
 
-        .auth-container {
-            width: 100%;
-            max-width: 400px;
-            background: var(--surface-color);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-2xl);
-            padding: var(--space-8);
-            border: 1px solid var(--border-light);
-        }
+                <input class="navbar__toggle-checkbox" id="nav-toggle" type="checkbox" />
+                <label class="navbar__toggle-label" for="nav-toggle" aria-hidden="true">
+                    <span class="navbar__toggle-icon" aria-hidden="true"></span>
+                </label>
 
-        .auth-header {
-            text-align: center;
-            margin-bottom: var(--space-8);
-        }
-
-        .auth-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-bottom: var(--space-4);
-        }
-
-        .auth-title {
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--heading-color);
-            margin-bottom: var(--space-2);
-        }
-
-        .auth-subtitle {
-            color: var(--text-secondary);
-            font-size: var(--font-size-base);
-            margin: 0;
-        }
-
-        .form-group {
-            margin-bottom: var(--space-6);
-        }
-
-        .form-label {
-            display: block;
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-medium);
-            color: var(--text-primary);
-            margin-bottom: var(--space-2);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: var(--space-3) var(--space-4);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-base);
-            transition: all var(--transition-base);
-            background: var(--surface-color);
-            color: var(--text-primary);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--primary-color)20;
-        }
-
-        .form-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .input-with-icon {
-            position: relative;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: var(--space-3);
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: var(--font-size-lg);
-            transition: color var(--transition-fast);
-        }
-
-        .input-with-icon .form-input {
-            padding-left: var(--space-10);
-        }
-
-        .form-input:focus + .input-icon,
-        .input-with-icon:focus-within .input-icon {
-            color: var(--primary-color);
-        }
-
-        .form-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-6);
-            font-size: var(--font-size-sm);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--primary-color);
-        }
-
-        .forgot-password {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: var(--font-weight-medium);
-            transition: color var(--transition-fast);
-        }
-
-        .forgot-password:hover {
-            color: var(--primary-dark);
-        }
-
-        .auth-button {
-            width: 100%;
-            padding: var(--space-4);
-            background: var(--primary-color);
-            color: var(--text-on-primary);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-base);
-            font-weight: var(--font-weight-semibold);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            margin-bottom: var(--space-6);
-        }
-
-        .auth-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .auth-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px var(--primary-color)30;
-        }
-
-        .auth-footer {
-            text-align: center;
-            padding-top: var(--space-6);
-            border-top: 1px solid var(--border-light);
-        }
-
-        .auth-footer p {
-            margin: 0;
-            color: var(--text-secondary);
-            font-size: var(--font-size-sm);
-        }
-
-        .auth-footer a {
-            color: var(--primary-color);
-            font-weight: var(--font-weight-semibold);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-
-        .auth-footer a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-medium);
-            margin-bottom: var(--space-4);
-            transition: color var(--transition-fast);
-        }
-
-        .back-to-home:hover {
-            color: var(--primary-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 480px) {
-            .auth-container {
-                padding: var(--space-6);
-                margin: var(--space-4);
-            }
-        }
-    </style>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
-</head>
-<body class="auth-page">
-    <div class="auth-container">
-        <div class="auth-header">
-            <a href="index.html" class="back-to-home">
-                <span>←</span>
-                <span>Back to Home</span>
-            </a>
-            
-            <a href="index.html" class="auth-logo">
-                <span>🚀</span>
-                <span>APS_X</span>
-            </a>
-            
-            <h1 class="auth-title">Welcome Back</h1>
-            <p class="auth-subtitle">Sign in to your account to continue</p>
-        </div>
-
-        <form class="auth-form" action="#" method="POST">
-            <div class="form-group">
-                <label for="email" class="form-label">Email Address</label>
-                <div class="input-with-icon">
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form-input" 
-                        placeholder="Enter your email"
-                        required
-                        autocomplete="email"
-                    >
-                    <span class="input-icon">📧</span>
-                </div>
+                <ul class="navbar__menu" role="menu" aria-labelledby="nav-toggle">
+                    <li class="navbar__item" role="none"><a class="navbar__link navbar__link--active" role="menuitem" href="#">Home</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Features</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Pricing</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <section>
+            <div class="login-box">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="mail"></ion-icon
+                        ></span>
+                        <input type="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"
+                            ><ion-icon name="lock-closed"></ion-icon
+                        ></span>
+                        <input type="password" required />
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" />Remember Me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit">Login</button>
+                    <div class="register-link">
+                        <p>
+                            Don't have an account?<a href="Register.html">
+                                Register</a
+                            >
+                        </p>
+                    </div>
+                </form>
             </div>
 
             <div class="form-group">
