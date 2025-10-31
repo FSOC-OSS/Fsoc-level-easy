@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s infinite;
+}
+
+.heartbeat i {
+    color: red;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(1.2);
+    }
+    
+    100% {
+        transform: scale(1);
+    }
+}

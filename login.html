@@ -5,8 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login Page</title>
         <link rel="stylesheet" href="login.css" />
+        <link rel="stylesheet" href="variables.css">
     </head>
     <body>
+         <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__container">
+                <a href="#" class="navbar__brand">MyApp</a>
+
+                <input class="navbar__toggle-checkbox" id="nav-toggle" type="checkbox" />
+                <label class="navbar__toggle-label" for="nav-toggle" aria-hidden="true">
+                    <span class="navbar__toggle-icon" aria-hidden="true"></span>
+                </label>
+
+                <ul class="navbar__menu" role="menu" aria-labelledby="nav-toggle">
+                    <li class="navbar__item" role="none"><a class="navbar__link navbar__link--active" role="menuitem" href="#">Home</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Features</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Pricing</a></li>
+                    <li class="navbar__item" role="none"><a class="navbar__link" role="menuitem" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
         <section>
             <div class="login-box">
                 <form action="">
@@ -39,7 +58,43 @@
                     </div>
                 </form>
             </div>
-        </section>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-with-icon">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password"
+                    >
+                    <span class="input-icon">🔒</span>
+                </div>
+            </div>
+
+            <div class="form-options">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="auth-button">
+                Sign In
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>
+                Don't have an account? 
+                <a href="register.html">Create one here</a>
+            </p>
+        </div>
+    </div>
         
     </body>
 </html>

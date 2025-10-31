@@ -1,0 +1,91 @@
+/* Dark Theme Variables */
+:root {
+  --background-dark: #181a2a;
+  --surface-dark: #23263a;
+  --primary-dark: #764ba2;
+  --secondary-dark: #667eea;
+  --accent-dark: #f9a826;
+  --text-dark: #f3f3f3;
+  --shadow-dark: rgba(0,0,0,0.5);
+}
+
+/* Apply dark theme styles when .dark-theme is on body */
+body.dark-theme {
+  background: linear-gradient(120deg, #23263a 0%, #181a2a 100%);
+  color: var(--text-dark);
+}
+
+header.dark-theme {
+  background: linear-gradient(135deg, #23263a 0%, #764ba2 100%);
+  color: var(--text-dark);
+}
+
+
+
+
+main.dark-theme,
+section.dark-theme {
+  background: linear-gradient(120deg, #23263a 0%, #181a2a 100%);
+  color: var(--text-dark);
+}
+
+.card,
+.typewriter-card,
+.flip-card-front,
+.flip-card-back,
+.modalBox {
+  background: var(--surface-dark);
+  color: var(--text-dark);
+  box-shadow: 0 2px 12px var(--shadow-dark);
+}
+
+.btn,
+.theme-toggle-btn {
+  background: var(--primary-dark);
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px var(--shadow-dark);
+}
+
+.btn:hover,
+.theme-toggle-btn:hover {
+  background: var(--secondary-dark);
+  color: var(--accent-dark);
+}
+
+footer {
+  background: linear-gradient(120deg, #23263a 0%, #764ba2 100%);
+  color: var(--text-dark);
+}
+
+.footerMiddle a,
+.footerMiddle p,
+.footerMiddle li {
+  color: var(--text-dark);
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, #23263a 0%, #764ba2 100%);
+}
+.flip-card-back {
+  background: linear-gradient(120deg, #764ba2 0%, #23263a 100%);
+}
+
+/* Gallery items */
+.gallery-item {
+  background: var(--surface-dark);
+  color: var(--text-dark);
+}
+
+/* Modal */
+.modalBox {
+  background: var(--surface-dark);
+  color: var(--text-dark);
+}
+
+/* Responsive adjustments for dark theme */
+@media (max-width: 600px) {
+  main.dark-theme,
+  section.dark-theme {
+    background: var(--surface-dark);
+  }
+}
